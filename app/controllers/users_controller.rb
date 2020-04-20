@@ -7,10 +7,9 @@ class UsersController < ApplicationController
 
   def create
     new_user = User.new(
-      first_name: params[:first_name],
-      last_name: params[:last_name],
-      email: params[:email],
-      password: params[:password],
+      id: params[:id],
+      name: params[:name],
+      role: params[:role],
     )
     if new_user.save
       redirect_to new_sessions_path
