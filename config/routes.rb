@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
   get "/" => "home#index"
-  get "users", to: "users#index"
+  resources :menus
+  resources :users
 end
