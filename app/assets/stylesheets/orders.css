@@ -58,20 +58,3 @@
     font-size: 15px;
     color:  rgb(83, 81, 81);
   }
-  .ordered_at > img{
-    padding: 3px;
-  }
-  .rating-and-status > img{
-    padding: 3px;
-  }
-  .rating > img{
-    padding: 3px;
-  }
-  .rating > img:hover{
-    transform: scale(1.5);
-  }
-  @keyframes orderHighlight{
-    0%{border: 2px solid darkred;}
-    99%{border: 2px solid darkred;}
-    100%{border: 1px solid grey;}
-  }

@@ -4,3 +4,7 @@
     text-align: center;
     color: rgba(red, green, 0 , alpha);
 }
+
+.error-message{
+    text-align: left;
+}
