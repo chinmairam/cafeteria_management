@@ -1,13 +1,18 @@
-<main class="Main-Head">
-  <main class="Login">
-    <%= form_with url: session_path, class: "login-form" do |f| %>
-      <p class="Signup/Login">
-         Welcome 
-        <%=link_to "Sign up ", new_user_path, class:"Signup Form" %>
-      </p>
-      <%= f.email_field :email, placeholder:"Email %>
-      <br>
-      <%= f.password_field :password, placeholder: "Password" %>
-    <% end %>
-  </main>
+<main class="signUpBox">
+  <%= form_with url: session_path, class: "signUp-form" do |f| %>
+    <p class="signUp-login">
+      Are You New to Cafeteria
+      <%= link_to "Sign Up here", new_user_path, class: "signUp-link" %>
+    </p>
+    <%= f.email_field :email,
+                      placeholder: "Email",
+                      autofocus: "autofocus" %>
+    <br>
+    <%= f.password_field :password,
+                         placeholder: "Password",
+                         autofocus: "autofocus" %>
+    <br>
+    <%= f.submit "Log in", data: { "disable-with": "Logging in..." }, class: "login-button" %>
+    <a href="" class="forgot-password"> Forgot your password?</a>
+  <% end %>
 </main>
