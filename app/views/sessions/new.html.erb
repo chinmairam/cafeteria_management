@@ -1,2 +1,13 @@
-<p class="NewUsers-title">Sign-in!</p>
-
+<main class="Main-Head">
+  <main class="Login">
+    <%= form_with url: session_path, class: "login-form" do |f| %>
+      <p class="Signup/Login">
+         Welcome 
+        <%=link_to "Sign up ", new_user_path, class:"Signup Form" %>
+      </p>
+      <%= f.email_field :email, placeholder:"Email %>
+      <br>
+      <%= f.password_field :password, placeholder: "Password" %>
+    <% end %>
+  </main>
+</main>
