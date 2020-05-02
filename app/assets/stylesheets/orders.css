@@ -1,0 +1,77 @@
+.orders {
+    max-width: 70%;
+    margin: 5px auto;
+  }
+  .orders-heading{
+    text-align: center;
+  }
+  .each-order{
+    max-width: 60%;
+    margin: 5px auto;
+    border: 1px dotted grey;
+    padding: 20px;
+    font-family: sans-serif;
+    border-radius: 5px;
+  }
+  .each-order > p{
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    font-family: sans-serif;
+  }
+  div.each-order:target{
+    animation: orderHighlight 15s 1;
+  }
+  .total-price{
+    margin-left: auto;
+    padding: 6px;
+    font-family: sans-serif;
+  }
+  .each-order-status{
+    margin-left: auto;
+    padding: 6px;
+    font-family: sans-serif;
+    font-size: 15px;
+  }
+  
+  .order-details{
+    border-top: 1px dotted grey;
+    padding: 10px;
+  
+  }
+  .order-details ul{
+    margin: 0 auto;
+    width: 70%;
+  }
+  .order-item{
+    display: flex;
+    align-items: center;
+  }
+  .order-item > span{
+    font-size: 15px;
+    color: rgb(83, 81, 81);
+  }
+  
+  .ordered_at{
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color:  rgb(83, 81, 81);
+  }
+  .ordered_at > img{
+    padding: 3px;
+  }
+  .rating-and-status > img{
+    padding: 3px;
+  }
+  .rating > img{
+    padding: 3px;
+  }
+  .rating > img:hover{
+    transform: scale(1.5);
+  }
+  @keyframes orderHighlight{
+    0%{border: 2px solid darkred;}
+    99%{border: 2px solid darkred;}
+    100%{border: 1px solid grey;}
+  }

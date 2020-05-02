@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: email)
     if user_authenticate(password)
       session[:current_user_id] = user.id
-      redirect_to root_path
+      redirect_to menus_path
     else
       render plain: "Incorrect Credentials"
     end
@@ -20,6 +20,6 @@ class SessionsController < ApplicationController
   def destroy
     session[:current_user_id] = nil
     @current_user = nil
-    redirect_to root_path
+    redirect_to menus_path
   end
 end
