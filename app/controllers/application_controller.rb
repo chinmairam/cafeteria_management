@@ -3,30 +3,35 @@ class ApplicationController < ActionController::Base
 
   def ensure_user_logged_in
     unless current_user
+      flash[:alert] = "Please login before proceeding"
+      redirect_to root_path
     end
   end
 
   def ensure_owner_logged_in
     unless current_user.is_owner?
+      flash[:alert] = "You are not allowed to enter the page"
       redirect_to menus_path
     end
   end
 
   def ensure_clerk_logged_in
     unless current_user.is_clerk?
+      flash[:alert] = "You are not allowed to enter the page"
+
       redirect_to menus_path
     end
   end
 
   def ensure_owner_or_clerk_logged_in
     unless current_user.is_clerk? || current_user.is_owner?
+      flash[:alert] = "You are not allowed to enter the page"
       redirect_to menus_path
     end
   end
 
   def current_user
     return @current_user if @current_user
-
     current_user_id = session[:current_user_id]
     if current_user_id
       @current_user = User.find(current_user_id)
