@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_04_22_050754) do
     t.text "name"
     t.text "description"
     t.integer "price"
+    t.decimal "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -42,15 +43,25 @@ ActiveRecord::Schema.define(version: 2020_04_22_050754) do
     t.integer "menu_item_id"
     t.text "menu_item_name"
     t.integer "menu_item_price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "orders", force: :cascade do |t|
     t.date "date"
     t.integer "user_id"
+    t.integer "feedback"
+    t.text "address"
+    t.datetime "delivered_at"
+    t.datetime "ordered_at"
+    t.text "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.text "name"
+    t.string "email"
     t.string "role"
     t.text "password_digest"
     t.datetime "created_at", precision: 6, null: false
