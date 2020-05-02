@@ -1,14 +1,29 @@
-class OrdersItem < ActiveRecord::Base
+class OrderItem < ActiveRecord::Base
   belongs_to :order
   belongs_to :menu_item
+
+  def to_a_string
+    "#{id} #{order_id} #{menu_item_id} #{menu_item_name} #{menu_item_price}"
+  end
+
+  def self.get_order_item(menu_item_id)
+    where("menu_item_id = ?", menu_item_id)
+  end
 
   def self.get_menu_item_price(menu_item_name)
     find_by(menu_item_name: menu_item_name).menu_item_price
   end
 
-
-  def all_menu_item_names
-    order_items.order(:menu_item_name).map { |item| item.menu_item_name }
+  def self.rate_menu_items(rating)
+    ids = all.map { |order_item| order_item.menu_item_id }.uniq
+    ids.each do |id|
+      if MenuItem.where("id = ?", id).exists?
+        menu_item = MenuItem.find(id)
+        menu_item.no_of_ratings = menu_item.no_of_ratings + 1
+        menu_item.save!
+        menu_item.ratings = (menu_item.ratings.to_f + rating.to_i) / (menu_item.no_of_ratings)
+        menu_item.save!
+      else
+      end
   end
-  
 end

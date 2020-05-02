@@ -1,13 +1,9 @@
 class User < ActiveRecord::Base
   has_secure_password
-
+  has_many :orders
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
   validates :password
-
-  def self.get_user_by_email(email)
-    user = all.where("email = ?", email).exists? ? find_by(email: email) : false
-  end
 
   def is_clerk?
     clerk = role == "clerk" ? true : false
@@ -25,4 +21,7 @@ class User < ActiveRecord::Base
     where("role = ?", "customer")
   end
 
+  def self.get_user_by_email(email)
+    user = all.where("email = ?", email).exists? ? find_by(email: email) : false
+  end
 end

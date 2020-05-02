@@ -23,12 +23,12 @@
           <% if @current_user.is_clerk? || @current_user.is_owner? %>
             <li class="cafeteria-navbarButton">
 
-              <%= link_to "Pending Orders", pending_orders_path%>
+              <%= link_to "Pending Orders", pending_orders_path %>
             </li>
           <% end %>
           <% if @current_user.is_owner? %>
             <li class="cafeteria-navbarButton">
-              <%= link_to "All Orders", all_orders_path%>
+              <%= link_to "All Orders", all_orders_path %>
             </li>
           <% end %>
           <li class="cafeteria-navbarButton">
@@ -82,5 +82,6 @@
       <% end %>
   </div>
        <%= yield %>
+       
   </body>
 </html>
