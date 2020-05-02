@@ -12,8 +12,10 @@ class SessionsController < ApplicationController
     if user_authenticate(password)
       session[:current_user_id] = user.id
       redirect_to menus_path
+      flash[:notice] = "You are signed in successfully!"
     else
       render plain: "Incorrect Credentials"
+      flash[:alert] = "Your password is incorrect"
     end
   end
 

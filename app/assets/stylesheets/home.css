@@ -1,36 +1,6 @@
-.Home-title {
-    font-size: 20px;
-    font-weight: 700;
-    color: #453C52;
-    margin-bottom: 30px;
-}
-
-.slidericon {
-    color: white;
-    width: 140px;
-    font-size: 16px;
-    padding: 15px;
-    background-color: blue;
-    border: 0px;
-    border-radius :0px
-}
-
-.Form-section {
-    margin-bottom: 15px;
-}
-
-.Form-submit {
-    font-size: 18px;
-    padding: 18px;
-    background-color: gray;
-    border: 0px;
-    border-radius: 5px;
-}
-
-.Formsubmit:hover {
-    background-color: rgb(red, green, blue);
-}
-
-.slider:hover .Formsubmit {
-    display: block;
+.home-main {
+    font-family: sans-serif;
+    padding: 6px;
+    text-align: center;
+    color: rgba(red, green, 0 , alpha);
 }

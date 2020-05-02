@@ -1,28 +1,5 @@
-<main>
- <h1 class = "Home-title">Welcome to Cafeteria</h1>
- <p>We serve Human Food:)</p>
- <p>We are delicious!</p>
- <p >You come to here to eat, right?</p>
- <p>Do you have money?</p>
- <div class="slider">
-      <p class="slidericon">What is your title?</p>
-        <%= form_with url: "/" do |form| %>
-         <div class="Form-section">
-            <%= form.submit "Customer", class: "Form-submit" %>
-         </div>
-        <% end %>
-        <%= form_with url: "/" do |form| %>
-         <div class="Form-section">
-            <%= form.submit "BillingClerk", class: "Form-submit" %>
-         </div>
-        <% end %>
-        <%= form_with url: "/" do |form| %>
-         <div class="Form-section">
-            <%= form.submit "Owner", class: "Form-submit" %>
-         </div>
-        <% end %>
- </div>
- </main>
- <form action="/menus" method="get">
-   <input type="submit" value="menus">
- </form>
+<h1>Home Page</h1>
+<h1 class="home-main">Exciting Foods</h1>
+<p class="order-btn">
+  <%= link_to "Order now!", menus_path %>
+</p>
