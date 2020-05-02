@@ -1,4 +1,3 @@
 class Menu < ActiveRecord::Base
-    has_many :items
-    has_many :categories, through :menu_items
+    has_many :menu_items
 end
