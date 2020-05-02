@@ -1,0 +1,41 @@
+<div class="cafeteria-menuItems">
+  <% @menus.each do |menu| %>
+    <ul class="menuItems-list">
+      <h3 class="menuName" id=<%= menu.name %>>
+        <%= menu.name %>
+      </h3>
+      <% menu.menu_items.order(:name).each do |menu_item| %>
+        <li class="menuItem">
+          <p>
+            <%= menu_item.name %>
+            <span class="item-rating">
+              <% menu_item.ratings.to_i.times do %>
+              <% end %>
+              <% (5-menu_item.ratings.to_i).times do %>
+              <% end %>
+            </span>
+            <span class="menuItem-details">
+              <span class="menuItem-price">
+                ₹<%= menu_item.price %>
+              </span>
+              <span class="menuItem-description"> <%= menu_item.description %> </span>
+            </span>
+          </p>
+          <p class="orderItem-updateItem">
+
+              <p class="each-menuItem-delete">
+                <%= link_to edit_menu_item_path(id: menu_item.id) do %>
+
+                <% end %>
+                <%= link_to menu_item, method: :delete, data: {confirm: 'Are you sure?'} do %>
+                  <%= image_tag "trash.png" %>
+                <% end %>
+              </p>
+            <% end %>
+
+          </p>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
