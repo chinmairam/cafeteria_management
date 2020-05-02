@@ -16,10 +16,20 @@ class OrderItemsController < ApplicationController
                                    menu_item_id: menu_item.id,
                                    menu_item_name: menu_item.name,
                                    menu_item_price: menu_item.price)
+    if params[:cart]
+      redirect_to cart_path
+    else
+      redirect_to menus_path
+    end
   end
 
   def destroy
     order_item_id = params[:id]
     order_item = OrderItem.find(order_item_id).destroy
+    if params[:cart]
+      redirect_to cart_path
+    else
+      redirect_to menus_path
+    end
   end
 end
