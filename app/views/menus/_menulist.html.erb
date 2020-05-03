@@ -1,10 +1,10 @@
-<div class="cafeteria-menu">
+<div class="Cafeteria-Menu">
   <ul>
     <% @menus.each do |menu| %>
-      <li class="menu">
+      <li class="Menu">
         <% if @current_user.is_owner? %>
-          <span class="menuItem-delete">
-            <%= link_to menu, method: :delete, data: {confirm: 'Are you sure?'} do %>
+          <span class="MenuItem-delete">
+            <%= link_to menu, method: :delete, data: { confirm: "Are you sure?" } do %>
               <%= image_tag "trash-can-outline.svg" %>
             <% end %>
           </span>

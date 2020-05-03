@@ -10,9 +10,9 @@
   </head>
 
   <body>
-    <div class="head-of-the-page">
+    <div class="head-page">
     <nav class="cafeteria-navbar">
-      <h2 class="cafeteria-navbarHeading">
+      <h2 class="cafeteria-navbarHeader">
       </h2>
       <ul class="cafeteria-navbarAllButtons">
         <% if @current_user %>
@@ -55,9 +55,9 @@
         <% end %>
       </ul>
     </nav>
-     <div class="search-box">
+     <div class="Search">
        <h3>Order Online</h3>
-       <section class="food-icons">
+       <section class="Food-Icons">
        </section>
        <%= yield :head %>
        <%= yield :search %>

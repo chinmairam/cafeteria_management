@@ -1,34 +1,34 @@
 <div class="cafeteria-menuItems">
   <% @menus.each do |menu| %>
-    <ul class="menuItems-list">
-      <h3 class="menuName" id=<%= menu.name %>>
+    <ul class="MenuItems-list">
+      <h3 class="MenuName" id=<%= menu.name %>>
         <%= menu.name %>
       </h3>
       <% menu.menu_items.order(:name).each do |menu_item| %>
-        <li class="menuItem">
+        <li class="MenuItem">
           <p>
             <%= menu_item.name %>
             <span class="item-rating">
               <% menu_item.ratings.to_i.times do %>
               <% end %>
-              <% (5-menu_item.ratings.to_i).times do %>
+              <% (5 - menu_item.ratings.to_i).times do %>
               <% end %>
             </span>
-            <span class="menuItem-details">
-              <span class="menuItem-price">
+            <span class="MenuItem-details">
+              <span class="MenuItem-price">
                 ₹<%= menu_item.price %>
               </span>
-              <span class="menuItem-description"> <%= menu_item.description %> </span>
+              <span class="MenuItem-description"> <%= menu_item.description %> </span>
             </span>
           </p>
           <p class="orderItem-updateItem">
-
-              <p class="each-menuItem-delete">
+          <% if @current_user.is_owner? %>
+              <p class="menuItem-delete">
                 <%= link_to edit_menu_item_path(id: menu_item.id) do %>
 
                 <% end %>
-                <%= link_to menu_item, method: :delete, data: {confirm: 'Are you sure?'} do %>
-                  <%= image_tag "trash.png" %>
+                <%= link_to menu_item, method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <%= image_tag "trash-can-outline.png" %>
                 <% end %>
               </p>
             <% end %>
@@ -37,24 +37,20 @@
               <% if @order.order_items.get_order_item(menu_item.id).exists? %>
                 <%= link_to "-",
                             order_item_path(id: @order.order_item(menu_item.name).id),
-                            {:method => :delete}
-                %>
+                            { :method => :delete } %>
                 <%= @order.order_items.get_order_item(menu_item.id).count %>
                 <%= link_to "+",
-                            order_items_path(menu_item_id: menu_item.id ),
-                            {:method => :post}
-                %>
+                            order_items_path(menu_item_id: menu_item.id),
+                            { :method => :post } %>
               <% else %>
-                <%=link_to "Add +",
-                           order_items_path(menu_item_id: menu_item.id ),
-                           {:method => :post}
-                %>
+                <%= link_to "Add +",
+                            order_items_path(menu_item_id: menu_item.id),
+                            { :method => :post } %>
               <% end %>
             <% else %>
               <%= link_to "Add +",
-                          order_items_path(menu_item_id: menu_item.id ),
-                          {:method => :post}
-              %>
+                          order_items_path(menu_item_id: menu_item.id),
+                          { :method => :post } %>
             <% end %>
           </p>
           </p>
