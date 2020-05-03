@@ -27,7 +27,8 @@ ActiveRecord::Schema.define(version: 2020_04_22_050754) do
     t.text "description"
     t.integer "price"
     t.boolean "active"
-    t.decimal "rating"
+    t.decimal "ratings"
+    t.integer "no_of_ratings"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -51,11 +52,11 @@ ActiveRecord::Schema.define(version: 2020_04_22_050754) do
   create_table "orders", force: :cascade do |t|
     t.date "date"
     t.integer "user_id"
-    t.integer "feedback"
     t.text "address"
+    t.integer "ratings"
     t.datetime "delivered_at"
     t.datetime "ordered_at"
-    t.text "status"
+    t.string "status", default: "being_created"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

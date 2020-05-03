@@ -3,11 +3,12 @@ class CreateOrders < ActiveRecord::Migration[6.0]
     create_table :orders do |t|
       t.date :date
       t.integer :user_id
-      t.integer :feedback
       t.text :address
+      t.integer :ratings
       t.datetime :delivered_at
       t.datetime :ordered_at
-      t.text :status
+      t.string :status, default: "being_created"
+
       t.timestamps
     end
   end

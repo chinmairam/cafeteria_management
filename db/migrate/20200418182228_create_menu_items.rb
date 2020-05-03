@@ -6,7 +6,8 @@ class CreateMenuItems < ActiveRecord::Migration[6.0]
       t.text :description
       t.integer :price
       t.boolean :active
-      t.decimal :rating
+      t.decimal :ratings
+      t.integer :no_of_ratings
       t.timestamps
     end
   end
