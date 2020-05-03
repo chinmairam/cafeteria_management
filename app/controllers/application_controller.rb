@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   def ensure_user_logged_in
     unless current_user
       flash[:alert] = "Please login before proceeding"
-      redirect_to "/"
+      redirect_to root_path
     end
   end
 
