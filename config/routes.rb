@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: home #index"
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: "home#index"
   resources :menus
   resources :menu_items
   resources :orders
@@ -11,5 +12,5 @@ Rails.application.routes.draw do
   get "/pending_orders", to: "orders#pending_orders", as: "pending_orders"
   get "/sign_in", to: "sessions#new", as: :new_session
   post "/sign_in", to: "sessions#create", as: :session
-  delete "/sign_out", to: "sessions#destroy", as: destroy_session
+  delete "/sign_out", to: "sessions#destroy", as: :destroy_session
 end

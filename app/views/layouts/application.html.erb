@@ -11,44 +11,44 @@
 
   <body>
     <div class="head-page">
-    <nav class="cafeteria-navbar">
-      <h2 class="cafeteria-navbarHeader">
+    <nav class="navbar">
+      <h2 class="navbarHeader">
       </h2>
-      <ul class="cafeteria-navbarAllButtons">
+      <ul class="navbarButtons">
         <% if @current_user %>
-          <li class="cafeteria-navbarButton">
+          <li class="navbarButton">
           
             <%= link_to "Home", menus_path %>
           </li>
           <% if @current_user.is_clerk? || @current_user.is_owner? %>
-            <li class="cafeteria-navbarButton">
+            <li class="navbarButton">
 
               <%= link_to "Pending Orders", pending_orders_path %>
             </li>
           <% end %>
           <% if @current_user.is_owner? %>
-            <li class="cafeteria-navbarButton">
+            <li class="navbarButton">
               <%= link_to "All Orders", all_orders_path %>
             </li>
           <% end %>
-          <li class="cafeteria-navbarButton">
+          <li class="navbarButton">
 
             <%= link_to "Orders", orders_path %>
           </li>
-          <li class="cafeteria-navbarButton">
+          <li class="navbarButton">
 
             <%= link_to "Cart", cart_path %>
           </li>
-          <li class="cafeteria-navbarButton">
+          <li class="navbarButton">
 
             <%= link_to "LogOut", destroy_session_path, method: :delete %>
           </li>
         <% else %>
-          <li class="cafeteria-navbarButton">
+          <li class="navbarButton">
 
             <%= link_to "Sign In", new_session_path %>
           </li>
-          <li class="cafeteria-navbarButton">
+          <li class="navbarButton">
 
             <%= link_to "Sign Up", new_user_path %>
           </li>
@@ -60,16 +60,12 @@
        <section class="Food-Icons">
        </section>
        <%= yield :head %>
-       <%= yield :search %>
      </div>
-      <% if notice %>
-       <p class="notice"><%= notice %></p>
-      <% end %>
       <% if flash.alert %>
        <p class="alert"><%= alert %></p>
       <% end %>
       <% if flash[:error] %>
-       <div id="error_explanation">
+       <div id="error_string">
         <h2>
           <%= pluralize(flash[:error].count, "error") %> FORM not allowed to be saved:
         </h2>

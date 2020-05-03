@@ -2,9 +2,6 @@ class MenuItemsController < ApllicationController
   def index
   end
 
-  def show
-  end
-
   def create
     menu = Menu.where(name: params[:menu_name].capitalize).exists? ? Menu.where(name: params[:menu_name].capitalize).first : Menu.new(name: params[:menu_name].capitalize)
     menu.save
@@ -24,9 +21,7 @@ class MenuItemsController < ApllicationController
     redirect_to menus_path
   end
 
-  def edit
-    ensure_owner_logged_in
-    @menu_item = MenuItem.find(params[:id])
+  def show
   end
 
   def update
@@ -47,5 +42,10 @@ class MenuItemsController < ApllicationController
 
   def permit_params
     params.require(:menu_item).permit(:name, :description, :menu_name, :price)
+  end
+
+  def edit
+    ensure_owner_logged_in
+    @menu_item = MenuItem.find(params[:id])
   end
 end
