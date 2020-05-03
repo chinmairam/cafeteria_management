@@ -1,0 +1,56 @@
+.Food-Icons > img{
+    padding: 8px;
+    margin: 5px;
+  }
+  
+  
+  .SearchItem{
+    max-width: 100%;
+    margin: 0px auto;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  
+  
+  .AddItem{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0px auto;
+    background-color: #c0e7f3;
+  }
+  .AddItem > form{
+    margin: 5px auto;
+    padding: 10px;
+  }
+  .AddItem > form > input{
+    margin: 5px auto;
+  }
+  .Add-item > form input{
+    background-color: white;
+    border-radius: 5px;
+    border: 0px;
+    font-size: 21px;
+    padding: 5px;
+  }
+  .AddItem > form input[type="submit"]{
+    background-color: rgba(159, 49, 250, 0.932);
+    color: white;
+  }
+  
+  .Search-button {
+    background-color: crimson;
+    padding: 10px;
+    border-radius: 4px;
+    margin-left: 10px;
+    font-size: 20px;
+    color: white;
+  }
+  .Search-box {
+    padding: 10px 12px;
+    font-size: 20px;
+    color: #453C52;
+    border-radius: 4px;
+    border: 1px solid rgb(9, 238, 238);
+  }

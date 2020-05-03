@@ -1,5 +1,5 @@
 <h3>
-  <th colspan="5" class="table-header"><%= heading %></th>
+  <th colspan="5" class="Table-Header"><%= heading %></th>
 </h3>
 <tr>
   <th>Id</th>
@@ -8,7 +8,7 @@
   <th>Orders</th>
 </tr>
 <% if owner %>
-  <tr class="user-row" id=<%= owner.id %>>
+  <tr class="User-Data" id=<%= owner.id %>>
     <td><%= owner.id %></td>
     <td><%= owner.name %></td>
     <td><%= owner.email %></td>
@@ -20,7 +20,7 @@
   </tr>
 <% elsif roles %>
   <% roles.each do |role| %>
-    <tr class="user-row" id=<%= role.id %>>
+    <tr class="User-Data" id=<%= role.id %>>
       <td><%= role.id %></td>
       <td><%= role.name %></td>
       <td><%= role.email %></td>

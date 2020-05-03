@@ -39,7 +39,7 @@
          <div class="Order-calculation" >
           <% order.all_menu_item_names.uniq.each do |menu_item| %>
                 <!%= menu_item + " x "+order.all_menu_item_names.count(menu_item).to_s+" = Rs."
-                +order.order_items.get_menu_item_price(menu_item)*order.all_menu_item_names.count(menu_item)   %>
+                +order.order_items.get_menu_item_price(menu_item)*order.all_menu_item_names.count(menu_item)     %>
                 <%= menu_item %> x <%= order.all_menu_item_names.count(menu_item).to_s %> =
                 <%= order.order_items.get_menu_item_price(menu_item) * order.all_menu_item_names.count(menu_item) %>
           <% end %>

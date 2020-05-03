@@ -1,0 +1,61 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.Users-Main{
+    max-width: 70%;
+    margin: 5px auto;
+  }
+  
+  table {
+    margin-top: 20px;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 8px;
+    -webkit-box-shadow: -1px 1px 5px 9px grey;
+    box-shadow: -1px 1px 5px 9px grey;
+  }
+  
+  td, th {
+    text-align: left;
+    padding: 8px;
+  }
+  th{
+    font-size: 21px;
+    font-size: bold;
+    border-bottom:2px solid grey ;
+  }
+  td{
+    font-size: 18px;
+    border-bottom: 1px dotted grey;
+  }
+  .User-Data:hover{
+    background-color: rgb(226, 224, 224);
+  }
+  .User-Data > td{
+    padding: 10px;
+  }
+  .Table-Header{
+    text-align: center;
+    font-size: 26px;
+    background-color: #6f7bd9;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+  }
+  .User-Data >td a{
+    color: rgb(59, 59, 175);
+  }
+  .User-Data >td a:hover{
+    color: rgba(255, 68, 0, 0.904);
+  }
+  .User-Data:target{
+    animation: user 15s 1;
+  }
+  @keyframes User{
+    0%{border-top: 2px solid tomato;border-bottom: 2px solid tomato;}
+    99%{border-top: 2px solid tomato;border-bottom: 2px solid tomato;}
+    100%{border: 1px dotted grey;}
+  }

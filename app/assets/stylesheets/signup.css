@@ -1,0 +1,50 @@
+
+  .SignUpMain{
+    max-width: 500px;
+    margin: 20px auto;
+    border: transparent;
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 30px;
+  }
+  
+  .SignUp-Login{
+    margin: 25px 0;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px
+  }
+  
+  .Login-Page{
+    text-decoration: none;
+    color: rgb(199, 26, 26);
+  }
+  
+  .SignUp-Form input[type="text"] ,input[type="password"],.Item-pricechange ,#user_name {
+    display: block;
+    margin : 5px auto;
+    width: 400px;
+    font-size: 25px;
+    padding: 5px;
+    text-align: center;
+    border: 2px solid rgb(65, 113, 216);
+    border-radius: 10px;
+  
+  }
+  
+  
+  .SignUp-Button{
+    text-decoration: none;
+    display: block;
+    margin: 10px auto;
+    width: 100px;
+    text-align: center;
+    background-color: crimson;
+    color: white;
+    font-weight: bold;
+    border: solid transparent;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 5px;
+  
+  }

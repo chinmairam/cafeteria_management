@@ -12,9 +12,17 @@
   <body>
     <div class="head-page">
     <nav class="navbar">
+    <div class="navbar-logo">
       <h2 class="navbarHeader">
          <%= image_tag "chef.png" %>
       </h2>
+    </div>
+    <div class="Buttons-container">
+        <div class="navbar-indexbutton">
+              <h3><%= image_tag "nav-buttons.png" %>.Online</h3>
+        </div>
+    </div>
+
       <ul class="navbarButtons">
         <% if @current_user %>
           <li class="navbarButton">
@@ -56,12 +64,12 @@
         <% end %>
       </ul>
     </nav>
-     <div class="Search">
+     <div class="SearchItem">
        <h3>Order Online</h3>
        <section class="Food-Icons">
        </section>
        <%= yield :head %>
-       <!%= yield :search   %>
+       <%= yield :search %>
      </div>
       <% if flash.alert %>
        <p class="alert"><%= alert %></p>

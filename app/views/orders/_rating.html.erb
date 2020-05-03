@@ -19,7 +19,7 @@
       <% end %>
     <% end %>
   <% end %>
-  <span class="Orderone-status"
+  <span class="Orderone-Status"
             <% if order.delivered_at %>
               style="color:#11b911;font-weight:bold"
             <% elsif order.date %>
@@ -28,6 +28,6 @@
               style="color:rgba(159, 49, 250, 0.932);font-weight:bold"
             <% end %>
   >
-    <!%= order.order_status   %>
+    <%= order.order_status %>
   </span>
 </p>

@@ -1,0 +1,125 @@
+.WalkIn{
+    max-width: 70%;
+    margin: 5px auto;
+  }
+  .WalkIn > h3{
+    text-align: center;
+    color: rgba(94, 121, 185, 0.91);
+  }
+  .MenuItems{
+    max-width: 70%;
+    margin: 0 auto;
+    display: flex;
+    font-family: sans-serif;
+  }
+  .Cafeteria-Menu{
+    width: 25%;
+    margin: 5px;
+    border-right: 2px dotted rgba(197, 194, 194, 0.966);
+  }
+  .MenuName{
+    margin: 5px;
+    padding: 5px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgba(0, 0, 0, 0.849);
+  }
+  h3.MenuName:target{
+    animation: menuHighlight 15s 1;
+  }
+  .Menu{
+    margin: 5px;
+    padding: 5px;
+    text-align: right;
+    display: flex;
+    align-items: center;
+  }
+  .Menu > a{
+    color: #0509c4;
+    margin-left: auto;
+    padding: 2px 8px;
+  }
+  .MenuItem {
+    height: 65px;
+    margin: 5px;
+    padding: 5px;
+    margin-left: 25px;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+  }
+  .MenuItems{
+    width: 75%;
+    margin: 0 auto;
+  }
+  .MenuItems{
+    border-bottom: 3px solid black;
+  }
+  .MenuItem > p{
+    padding: 5px;
+  }
+  .MenuItem:hover{
+    background-color: #e7e7eb;
+    border-radius: 10px;
+  }
+  
+   .Update-item{
+     margin-left: auto;
+     margin-right: 15px;
+    }
+  
+    .OrderItem-add{
+     border: 1px solid #a13cf9;
+     color: #a13cf9;
+     padding: 8px;
+    }
+  
+   .MenuItem-details{
+     display: block;
+     padding: 2px;
+     margin: 5px;
+     font-size: 18px;
+   }
+   .MenuItem-price{
+     max-width: 35px;
+     color: #535665;
+   }
+   .OrderItem-add > a{
+    color: #a13cf9;
+    width: 20px;
+    padding: 5px;
+   }
+  
+  .Menu:hover > .MenuItem-delete{
+    display: inline-block;
+  }
+  .MenuItem-delete{
+    display: none;
+    margin-left: auto;
+  }
+  .MenuItem-delete > a img{
+    margin-left: auto;
+    padding: 8px;
+  }
+  .MenuItem:hover > .MenuItem-delete{
+    display: inline-block;
+  }
+  .MenuItem-description{
+    font-size: 15px;
+    margin-left:25px;
+    padding: 5px;
+    color:#7e808c;
+    border-left: 1px dotted black;
+  }
+  .MenuItem-rating{
+    padding: 3px;
+    margin-left: 5px;
+  }
+  
+  
+  @keyframes MenuHighlight{
+    0%{background-color: #a13cf9;color: white;}
+    99%{background-color: #a13cf9;color: white;}
+    100%{background-color: white;color: black;}
+  }

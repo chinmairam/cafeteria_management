@@ -1,8 +1,8 @@
-<main class="SignUpBox">
-  <%= form_with url: session_path, class: "signUp-form" do |f| %>
+<main class="SignUpMain">
+  <%= form_with url: session_path, class: "SignUp-Form" do |f| %>
     <p class="SignUp-Login">
       Are You New to Cafeteria
-      <%= link_to "Sign Up here", new_user_path, class: "SignUp-link" %>
+      <%= link_to "Sign Up here", new_user_path, class: "SignUp-Link" %>
     </p>
     <%= f.email_field :email,
                       placeholder: "Email" %>
@@ -10,6 +10,6 @@
     <%= f.password_field :password,
                          placeholder: "Password" %>
     <br>
-    <%= f.submit "Log in", data: { "disable-with": "Logging in....." }, class: "login-button" %>
+    <%= f.submit "Log in", data: { "disable-with": "Logging in....." }, class: "Login-Button" %>
   <% end %>
 </main>
