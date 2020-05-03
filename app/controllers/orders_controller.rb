@@ -48,6 +48,6 @@ class OrdersController < ApplicationController
     @order.ratings = params[:rating]
     @order.save!
     @order.order_items.rate_menu_items(params[:rating])
-    redirect_to(orders_path, notice: "Thank you for rating order with id:#{params[:id]}")
+    redirect_to(orders_path, notice: "Thanks for rating order with id:#{params[:id]}")
   end
 end

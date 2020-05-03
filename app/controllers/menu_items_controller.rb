@@ -18,15 +18,15 @@ class MenuItemsController < ApllicationController
     end
   end
 
-  def edit
-    ensure_owner_logged_in
-    @menu_item = MenuItem.find(params[:id])
-  end
-
   def destroy
     ensure_owner_logged_in
     MenuItem.find(params[:id]).destroy
     redirect_to menus_path
+  end
+
+  def edit
+    ensure_owner_logged_in
+    @menu_item = MenuItem.find(params[:id])
   end
 
   def update
@@ -46,6 +46,6 @@ class MenuItemsController < ApllicationController
   private
 
   def permit_params
-    params.require(:menu_item).pemit(:name, :description, :menu_name, :price)
+    params.require(:menu_item).permit(:name, :description, :menu_name, :price)
   end
 end

@@ -25,5 +25,6 @@ class OrderItem < ActiveRecord::Base
         menu_item.save!
       else
       end
+    end
   end
 end
