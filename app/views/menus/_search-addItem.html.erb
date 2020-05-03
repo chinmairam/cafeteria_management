@@ -1,18 +1,18 @@
 <% content_for :head do %>
-<div class="search-box">
+<div class="Search">
     <form>
       <input type="search" placeholder="Search for item">
       <input type="submit" value="Seach Item">
     </form>
   </div>
   <% if @current_user.is_owner? %>
-    <div class="addItem-form" id="addItem-form">
+    <div class="AddItem" id="AddItem">
       <%= form_with(model: @menu, url: menu_items_url, method: "post", local: true) do |form| %>
         <%= form.text_field :name, placeholder: "Item name" %>
         <%= form.number_field :price, placeholder: "Item price", in: 1..5000 %>
         <%= form.text_field :description, placeholder: "Description of item" %>
         <%= form.text_field :menu_name, placeholder: "Menu name" %>
-        <%= form.submit data: { "disable-with": "Saving....." } %>
+        <%= form.submit data: { "disable-with": "Placing....." } %>
       <% end %>
     </div>
   <% end %>

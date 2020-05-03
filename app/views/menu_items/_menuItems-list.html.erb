@@ -1,6 +1,6 @@
-<div class="cafeteria-menuItems">
+<div class="MenuItems">
   <% @menus.each do |menu| %>
-    <ul class="MenuItems-list">
+    <ul class="MenuItems-List">
       <h3 class="MenuName" id=<%= menu.name %>>
         <%= menu.name %>
       </h3>
@@ -8,7 +8,7 @@
         <li class="MenuItem">
           <p>
             <%= menu_item.name %>
-            <span class="item-rating">
+            <span class="MenuItem-rating">
               <% menu_item.ratings.to_i.times do %>
               <% end %>
               <% (5 - menu_item.ratings.to_i).times do %>
@@ -21,9 +21,9 @@
               <span class="MenuItem-description"> <%= menu_item.description %> </span>
             </span>
           </p>
-          <p class="orderItem-updateItem">
+          <p class="UpdateItem">
           <% if @current_user.is_owner? %>
-              <p class="menuItem-delete">
+              <p class="MenuItem-delete">
                 <%= link_to edit_menu_item_path(id: menu_item.id) do %>
 
                 <% end %>
@@ -32,24 +32,20 @@
                 <% end %>
               </p>
             <% end %>
-            <p class="orderItem-add">
+            <p class="OrderItem-add">
             <% if @order %>
               <% if @order.order_items.get_order_item(menu_item.id).exists? %>
-                <%= link_to "-",
-                            order_item_path(id: @order.order_item(menu_item.name).id),
+                <%= link_to "-", order_item_path(id: @order.order_item(menu_item.name).id),
                             { :method => :delete } %>
                 <%= @order.order_items.get_order_item(menu_item.id).count %>
-                <%= link_to "+",
-                            order_items_path(menu_item_id: menu_item.id),
+                <%= link_to "+", order_items_path(menu_item_id: menu_item.id),
                             { :method => :post } %>
               <% else %>
-                <%= link_to "Add +",
-                            order_items_path(menu_item_id: menu_item.id),
+                <%= link_to "Add +", order_items_path(menu_item_id: menu_item.id),
                             { :method => :post } %>
               <% end %>
             <% else %>
-              <%= link_to "Add +",
-                          order_items_path(menu_item_id: menu_item.id),
+              <%= link_to "Add +",order_items_path(menu_item_id: menu_item.id),
                           { :method => :post } %>
             <% end %>
           </p>
