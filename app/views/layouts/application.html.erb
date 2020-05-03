@@ -17,7 +17,7 @@
       <ul class="cafeteria-navbarAllButtons">
         <% if @current_user %>
           <li class="cafeteria-navbarButton">
-
+          
             <%= link_to "Home", menus_path %>
           </li>
           <% if @current_user.is_clerk? || @current_user.is_owner? %>

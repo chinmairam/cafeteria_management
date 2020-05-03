@@ -5,12 +5,10 @@
       <%= link_to "Sign Up here", new_user_path, class: "signUp-link" %>
     </p>
     <%= f.email_field :email,
-                      placeholder: "Email",
-                      autofocus: "autofocus" %>
+                      placeholder: "Email" %>
     <br>
     <%= f.password_field :password,
-                         placeholder: "Password",
-                         autofocus: "autofocus" %>
+                         placeholder: "Password" %>
     <br>
     <%= f.submit "Log in", data: { "disable-with": "Logging in..." }, class: "login-button" %>
     <a href="" class="forgot-password"> Forgot your password?</a>

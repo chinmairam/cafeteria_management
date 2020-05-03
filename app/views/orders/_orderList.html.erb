@@ -4,7 +4,7 @@
         <span>Order Id:
           <%= order.id %>
         </span>
-        <span class="total-price">Rs.<%= order.total_price %></span>
+        <span class="total-price">Rs <%= order.total_price %></span>
       </p>
       <p class="ordered_at">
         <% if order.user.is_clerk? || order.user.is_owner? %>
@@ -26,7 +26,7 @@
                 <%= menu_item + " x" + order.all_menu_item_names.count(menu_item).to_s %>
               </span >
               <span class="total-price">
-                Rs.<%= order.order_items.get_menu_item_price(menu_item) * order.all_menu_item_names.count(menu_item) %>
+                Rs <%= order.order_items.get_menu_item_price(menu_item) * order.all_menu_item_names.count(menu_item) %>
               </span>
             </li>
           <% end %>
