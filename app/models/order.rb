@@ -3,10 +3,10 @@ class Order < ActiveRecord::Base
   belongs_to :user
 
   def to_a_string
-    "#{id} #{date} ITEMS:#{order_items.map { |item| item.menu_item_name }.join("--")} TOTAL PRICE:#{total_price} STATUS:++#{status} #{delivered_at}"
+    "#{id} #{date} Items:#{order_items.map { |item| item.menu_item_name }.join("---")} TOTAL PRICE:#{total_price} STATUS:#{status} #{delivered_at}"
   end
 
-  def self.delivered_and_confirmed
+  def self.delivered
     where.not("status = ? ", "being_created")
   end
 
@@ -16,22 +16,6 @@ class Order < ActiveRecord::Base
 
   def self.being_created
     where("status= ?", "being_created").first
-  end
-
-  def order_status
-    if status == "being_created"
-      "Being created"
-    elsif status == "order_confirmed"
-      "Order Confirmed"
-    else
-      "Delivered at #{delivered_at.strftime("%d %B,%Y - %I:%M %p")}"
-    end
-  end
-
-  def total_price
-    price = 0
-    order_items.each { |item| price = price + item.menu_item_price }
-    price
   end
 
   def order_item(menu_item_name)
@@ -44,5 +28,21 @@ class Order < ActiveRecord::Base
 
   def self.get_order_by_id(id)
     order = all.where("id = ?", id).exists? ? find(id) : false
+  end
+
+  def order_status
+    if status == "being_created"
+      "Being Created"
+    elsif status == "order_confirmed"
+      "order confirmed"
+    else
+      "Delivered at #{delivered_at.strftime("%d %B,%Y - %I:%M %p")}"
+    end
+  end
+
+  def total_price
+    price = 0
+    order_items.each { |item| price = price + item.menu_item_price }
+    price
   end
 end

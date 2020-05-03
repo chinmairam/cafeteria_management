@@ -21,7 +21,6 @@ class UsersController < ApplicationController
     user = User.new(name: name.capitalize, email: email, role: "customer", password: password)
     if user.save
       user.save!
-      flash[:notice] = "Welcome #{user.name}!"
       session[:current_user_id] = user.id
       redirect_to menus_path
     else
