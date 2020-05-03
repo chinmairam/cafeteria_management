@@ -1,20 +1,20 @@
-<div class="cart">
-  <h3 class="cart-Heading">Cart</h3>
+<div class="Cart">
+  <h3 class="Cart-Heading">Cart</h3>
   <% if @order %>
     <% if @order.order_items.empty? %>
       <h2 class="empty-cart">Your cart is empty</h2>
     <% else %>
-      <div class="cart-item-price">
-        <p class="cart-item-heading" >
+      <div class="Cart-item-price">
+        <p class="Cart-item-heading" >
           <span>Item Name</span >
           <span class="total-price">Price</span>
         </p>
         <ul>
           <% @order.all_menu_item_names.uniq.each do |menu_item_name| %>
-            <li class="cart-item" >
+            <li class="Cart-item" >
               <span><%= menu_item_name %></span >
               <span class="total-price">
-                <p class="cartItem-add">
+                <p class="CartItem-add">
                   <%= link_to "-",
                               order_item_path(id: @order.order_item(menu_item_name).id, cart: 1),
                               { :method => :delete } %>
@@ -30,7 +30,7 @@
             </li>
           <% end %>
         </ul>
-        <p class="cart-total-price" >
+        <p class="Cart-total-price" >
           <span>Total Price</span >
           <span class="total-price"><%= @order.total_price %></span>
         </p>

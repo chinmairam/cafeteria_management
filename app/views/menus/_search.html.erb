@@ -2,11 +2,11 @@
 <div class="Search">
     <form>
       <input type="search" placeholder="Search for item">
-      <input type="submit" value="Seach Item">
+      <input type="submit" value="Search">
     </form>
   </div>
   <% if @current_user.is_owner? %>
-    <div class="AddItem" id="AddItem">
+    <div class="AddItem" id="Add-item-form">
       <%= form_with(model: @menu, url: menu_items_url, method: "post", local: true) do |form| %>
         <%= form.text_field :name, placeholder: "Item name" %>
         <%= form.number_field :price, placeholder: "Item price", in: 1..5000 %>

@@ -1,10 +1,11 @@
-<%= render partial: "search-addItem" %>
+<%= render partial: "search" %>
 <% if @current_user.is_clerk? || @current_user.is_owner? %>
   <div class="walk-in">
     <h2>
       Walk-in customer Order
     </h2>
   </div>
+<% end %>
 <div class="MenuItems">
   <%= render partial: "menu" %>
   <%= render partial: "menu_items/menulist" %>

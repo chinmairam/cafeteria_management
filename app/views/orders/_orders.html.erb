@@ -1,0 +1,55 @@
+<% orders.each do |order| %>
+  <div class="Orderone" id="<%= order.id %>">
+
+      <div class ="Order-section">
+        <p class="Order-sub">Order Id</p>
+        <div class="Order-id"><%= order.id %></div>
+      </div>
+
+      <div class="Order-section">
+        <p class="Order-sub">Details</p>
+
+        <% if order.user.is_clerk? || order.user.is_owner? %>
+        <div class="Walk-image">
+          <%= image_tag "costumer.png" %>
+          <%= "Walk in customer" %>
+       </div>
+        <% else %>
+          <div class='User-name'>
+            <%= order.user.name.capitalize %>
+          </div>
+        <% end %>
+
+        <% if order.date %>
+          <div class="Order-date">
+            <%= order.date.strftime("%d %B,%Y - %I:%M %p") %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="Order-section">
+        <p class="Order-sub">Ratings</p>
+        <div class="Order-ratings">
+        <%= render partial: "ratings", locals: { order: order, mark_as_delivered: mark_as_delivered } %>
+        </div>
+      </div>
+
+      <section class="Order-section" id="Order-details">
+          <div class="Order-sub">Billing</p>
+         <div class="Order-calculation" >
+          <% order.all_menu_item_names.uniq.each do |menu_item| %>
+                <!%= menu_item + " x "+order.all_menu_item_names.count(menu_item).to_s+" = Rs."
+                +order.order_items.get_menu_item_price(menu_item)*order.all_menu_item_names.count(menu_item)   %>
+                <%= menu_item %> x <%= order.all_menu_item_names.count(menu_item).to_s %> =
+                <%= order.order_items.get_menu_item_price(menu_item) * order.all_menu_item_names.count(menu_item) %>
+          <% end %>
+         </div>
+      </section>
+
+      <div class ="Order-section">
+        <p class="Order-sub">Order price</p>
+        <div class="Order-price">Rs.<%= order.total_price %></div>
+      </div>
+
+  </div>
+<% end %>

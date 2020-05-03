@@ -1,18 +1,6 @@
-class OrderItem < ActiveRecord::Base
+class OrderItem < ApplicationRecord
   belongs_to :order
   belongs_to :menu_item
-
-  def self.get_order_item(menu_item_id)
-    where("menu_item_id = ?", menu_item_id)
-  end
-
-  def to_a_string
-    "#{id} #{order_id} #{menu_item_id} #{menu_item_name} #{menu_item_price}"
-  end
-
-  def self.get_menu_item_price(menu_item_name)
-    find_by(menu_item_name: menu_item_name).menu_item_price
-  end
 
   def self.rate_menu_items(rating)
     ids = all.map { |order_item| order_item.menu_item_id }.uniq
@@ -26,5 +14,17 @@ class OrderItem < ActiveRecord::Base
       else
       end
     end
+  end
+
+  def self.get_order_item(menu_item_id)
+    where("menu_item_id = ?", menu_item_id)
+  end
+
+  def to_a_string
+    "#{id} #{order_id} #{menu_item_id} #{menu_item_name} #{menu_item_price}"
+  end
+
+  def self.get_menu_item_price(menu_item_name)
+    find_by(menu_item_name: menu_item_name).menu_item_price
   end
 end

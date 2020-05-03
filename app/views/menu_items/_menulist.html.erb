@@ -41,11 +41,11 @@
                 <%= link_to "+", order_items_path(menu_item_id: menu_item.id),
                             { :method => :post } %>
               <% else %>
-                <%= link_to "Add +", order_items_path(menu_item_id: menu_item.id),
+                <%= link_to "Add to cart", order_items_path(menu_item_id: menu_item.id),
                             { :method => :post } %>
               <% end %>
             <% else %>
-              <%= link_to "Add +",order_items_path(menu_item_id: menu_item.id),
+              <%= link_to "Add to cart", order_items_path(menu_item_id: menu_item.id),
                           { :method => :post } %>
             <% end %>
           </p>

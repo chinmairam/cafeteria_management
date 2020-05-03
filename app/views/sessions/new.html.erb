@@ -1,8 +1,8 @@
-<main class="signUpBox">
+<main class="SignUpBox">
   <%= form_with url: session_path, class: "signUp-form" do |f| %>
-    <p class="signUp-login">
+    <p class="SignUp-Login">
       Are You New to Cafeteria
-      <%= link_to "Sign Up here", new_user_path, class: "signUp-link" %>
+      <%= link_to "Sign Up here", new_user_path, class: "SignUp-link" %>
     </p>
     <%= f.email_field :email,
                       placeholder: "Email" %>
