@@ -23,7 +23,7 @@
                               order_items_path(menu_item_id: @order.order_item(menu_item_name).menu_item_id, cart: 1),
                               { :method => :post } %>
                 </p>
-                <p class="qty-price">
+                <p class="qty">
                   Rs <%= @order.order_items.get_menu_item_price(menu_item_name) * @order.all_menu_item_names.count(menu_item_name) %>
                 </p>
               </span>
