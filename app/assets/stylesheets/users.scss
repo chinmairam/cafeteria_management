@@ -14,8 +14,7 @@
     border-collapse: collapse;
     width: 100%;
     border-radius: 8px;
-    -webkit-box-shadow: -1px 1px 5px 9px grey;
-    box-shadow: -1px 1px 5px 9px grey;
+    
   }
   
   td, th {
@@ -49,10 +48,7 @@
     color: rgb(59, 59, 175);
   }
   .User-Data >td a:hover{
-    color: rgba(255, 68, 0, 0.904);
-  }
-  .User-Data:target{
-    animation: user 15s 1;
+    color: blue;
   }
   @keyframes User{
     0%{border-top: 2px solid tomato;border-bottom: 2px solid tomato;}

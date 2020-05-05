@@ -1,22 +1,27 @@
-.Cart{
-  max-width: 50%;
-  margin: 5px auto;
-  font-family: sans-serif;
-}
+
 .Cart-item-price {
-  width: 70%;
+  width: 80%;
   margin: 5px auto;
 }
+
 .Cart-item-price > ul{
   border-top: 1px dotted gray;
   border-bottom: 1px dotted gray;
 }
+
 .Cart-title{
   text-align: center;
 }
+
 .total-price{
   margin-left: auto;
   padding: 5px;
+  font-family: sans-serif;
+}
+
+.Cart{
+  max-width: 50%;
+  margin: 5px auto;
   font-family: sans-serif;
 }
 

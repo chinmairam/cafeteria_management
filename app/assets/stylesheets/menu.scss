@@ -16,12 +16,14 @@
     width: 25%;
     margin: 5px;
     border-right: 2px dotted rgba(197, 194, 194, 0.966);
+    margin-left: 100px;
+    margin-top: 50px;
   }
   .MenuName{
     margin: 5px;
     padding: 5px;
     font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: sans-serif;
     color: rgba(0, 0, 0, 0.849);
   }
   h3.MenuName:target{
@@ -50,7 +52,7 @@
     font-family: sans-serif;
   }
   .MenuItems{
-    width: 75%;
+    width: 85%;
     margin: 0 auto;
   }
   .MenuItems{
@@ -60,7 +62,7 @@
     padding: 5px;
   }
   .MenuItem:hover{
-    background-color: #e7e7eb;
+    background-color: greenyellow;
     border-radius: 10px;
   }
   
@@ -70,8 +72,8 @@
     }
   
     .OrderItem-add{
-     border: 1px solid #a13cf9;
      color: #a13cf9;
+     border-radius: 6px;
      padding: 8px;
     }
   
