@@ -12,7 +12,7 @@
         <ul>
           <% @order.all_menu_item_names.uniq.each do |menu_item_name| %>
             <li class="Cart-item" >
-              <span><%= menu_item_name %></span >
+              <div><%= menu_item_name %></div>
               <span class="total-price">
                 <p class="CartItem-add">
                   <%= link_to "-",
@@ -31,15 +31,15 @@
           <% end %>
         </ul>
         <p class="Cart-total-price" >
-          <span>Total Price</span >
-          <span class="total-price"><%= @order.total_price %></span>
+          <div>Total Price</div >
+          <div class="total-price"><%= @order.total_price %></div>
         </p>
         <%= form_with(model: @order, url: orders_path, method: "post", local: true) do |form| %>
-          <%= form.submit "Checkout", data: { "disable-with": "Processing....." }, class: "cart-checkout" %>
+          <%= form.submit "Leave", class: "cart-checkout" %>
         <% end %>
       </div>
     <% end %>
   <% else %>
-    <h2 class="empty-cart">Your cart is empty</h2>
+    <h2 class="empty-cart">Your Cart is empty</h2>
   <% end %>
 </div>

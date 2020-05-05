@@ -3,13 +3,12 @@
     <% @menus.each do |menu| %>
       <li class="Menu">
         <% if @current_user.is_owner? %>
-          <span class="MenuItem-delete">
-            <%= link_to menu, method: :delete, data: { confirm: "Are you sure?" } do %>
+          <div class="MenuItem-delete">
+            <%= link_to menu, method: :delete do %>
               <%= image_tag "trash-can-outline.svg" %>
             <% end %>
-          </span>
+          </div>
         <% end %>
-        <a href=<%= "##{menu.name}" %>><%= menu.name %></a>
       </li>
     <% end %>
   </ul>

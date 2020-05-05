@@ -8,10 +8,22 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    unless current_user
+      redirect_to root_path
+    end
+  end
+
   def index
     ensure_owner_logged_in
     @clerks = User.clerks
     @customers = User.customers
+  end
+
+  def edit
+    unless current_user
+      redirect_to root_path
+    end
   end
 
   def create

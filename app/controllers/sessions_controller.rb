@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   skip_before_action :ensure_user_logged_in
 
   def new
@@ -13,7 +14,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: email)
     if user && user_authenticate(password)
       session[:current_user_id] = user.id
-      flash[:notice] = "You are signed in successfully!"
+      flash[:notice] = "You are signed in successfully"
       redirect_to menus_path
     else
       flash[:alert] = "No account with given email"
@@ -24,7 +25,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:current_user_id] = nil
     @current_user = nil
-    flash[:notice] = "You are logged Out successfully!"
+    flash[:notice] = "You are logged out successfully!"
     redirect_to root_path
   end
 end

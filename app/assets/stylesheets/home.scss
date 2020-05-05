@@ -2,16 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-body{
+body { 
   font-family: sans-serif;
 }
 
-.navbar{
+.navbar {
   display: flex;
   max-width: 100%;
   margin: 0 auto;
 }
-.navbarHeader{
+.navbarHeader {
   margin: 5px;
   padding: 5px;
   color: rgba(34, 33, 33, 0.877);
@@ -21,13 +21,13 @@ body{
   align-items: center;
   color: red;
 }
-.navbarHeader img{
+.navbarHeader img {
   padding: 5px;
 }
-.navbarButtons{
+.navbarButtons {
   align-items: left;
   margin-left:auto ;
-  display: none;
+  display: flex;
 }
 
 .Buttons-container {

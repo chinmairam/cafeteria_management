@@ -7,12 +7,23 @@
   </div>
   <% if @current_user.is_owner? %>
     <div class="AddItem" id="Add-item-form">
+    <p class="Add-heading">Add Items
+    </p>
       <%= form_with(model: @menu, url: menu_items_url, method: "post", local: true) do |form| %>
+        <div class="costum-select">
+          <select name="menu_name" onchange=show_box(this.value)>
+           <option value="" disabled selected style="color:#7e808c">Add a Menu</option>
+            <% Menu.order(:name).each do |menu| %>
+              <option class="Dropdown-content" value=<%= menu.name %>> <%= menu.name %> </option>
+            <% end %>
+            <option class="Dropdown-content" value="Add a Menu">Add a Menu</option>
+          </select>
+        </div>
         <%= form.text_field :name, placeholder: "Item name" %>
-        <%= form.number_field :price, placeholder: "Item price", in: 1..5000 %>
+        <%= form.number_field :price, placeholder: "Item price" %>
         <%= form.text_field :description, placeholder: "Description of item" %>
         <%= form.text_field :menu_name, placeholder: "Menu name" %>
-        <%= form.submit data: { "disable-with": "Placing....." } %>
+        <%= form.submit %>
       <% end %>
     </div>
   <% end %>

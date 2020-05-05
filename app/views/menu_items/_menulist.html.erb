@@ -1,7 +1,7 @@
 <div class="MenuItems">
   <% @menus.each do |menu| %>
     <ul class="MenuItems-List">
-      <h3 class="MenuName" id=<%= menu.name %>>
+      <h3 class="MenuName" id=<%= menu.name %> >
         <%= menu.name %>
       </h3>
       <% menu.menu_items.order(:name).each do |menu_item| %>
@@ -9,15 +9,15 @@
           <p>
             <%= menu_item.name %>
             <span class="MenuItem-rating">
-              <% menu_item.ratings.to_i.times do %>
+              <% menu - item.ratings.to_i.times do %>
+              <%= image_tag "rate.png" %>
               <% end %>
               <% (5 - menu_item.ratings.to_i).times do %>
+              <%= image_tag "star1.png" %>
               <% end %>
             </span>
             <span class="MenuItem-details">
-              <span class="MenuItem-price">
-                ₹<%= menu_item.price %>
-              </span>
+              <span class="MenuItem-price"> Rs. <%= menu_item.price %> </span>
               <span class="MenuItem-description"> <%= menu_item.description %> </span>
             </span>
           </p>
@@ -25,7 +25,7 @@
           <% if @current_user.is_owner? %>
               <p class="MenuItem-delete">
                 <%= link_to edit_menu_item_path(id: menu_item.id) do %>
-
+                  <%= image_tag "edit1.png" %>
                 <% end %>
                 <%= link_to menu_item, method: :delete, data: { confirm: "Are you sure?" } do %>
                   <%= image_tag "trash-can-outline.png" %>

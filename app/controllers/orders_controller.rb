@@ -1,20 +1,22 @@
 class OrdersController < ApplicationController
-
- def index
+  def index
     orders = current_user.orders.order(:id)
-  end
-
-  def show
   end
 
   def pending_orders
     ensure_owner_or_clerk_logged_in
   end
 
+  def show
+    ensure_owner_logged_in
+    if @current_user
+    end
+  end
+
   def create
     @order = current_user.orders.being_created
     if @order.order_items.empty?
-      redirect_to(cart_path, alert: "Order must have atleast 1 item")
+      redirect_to(cart_path, alert: "Order should have atleast 1 fooditem")
     else
       @order.status = "order_confirmed"
       @order.date = Time.now + 20000
@@ -27,7 +29,7 @@ class OrdersController < ApplicationController
   def update
     ensure_owner_or_clerk_logged_in
     @order = Order.find(params[:id])
-    @order.status = "order_delivered"
+    @order.status = "Order_Delivered"
     @order.delivered_at = Time.now + 20000
     @order.save!
     flash[:notice] = "#{@order.id} is marked as delivered!"
@@ -48,6 +50,6 @@ class OrdersController < ApplicationController
     @order.ratings = params[:rating]
     @order.save!
     @order.order_items.rate_menu_items(params[:rating])
-    redirect_to(orders_path, notice: "Thanks for rating order with id:#{params[:id]}")
+    redirect_to(orders_path, notice: "Thanks for rating order ")
   end
 end

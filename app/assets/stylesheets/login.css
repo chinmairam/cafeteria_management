@@ -1,16 +1,18 @@
-body{
+body {
     font-family: sans-serif;
   }
+
   .main-welcomeBody{
     display: flex;
     font-family:  sans-serif;
   }
-  .Header{
-    max-width: 98%;
+
+ .Header {
+    max-width: 96%;
     margin: 0 auto;
     padding: 10px;
     text-align: center;
-    font-size: 50px;
+    font-size: 48px;
     font-family: sans-serif;
     font-weight: bold;
     background-color: rgb(94, 67, 136);
@@ -22,17 +24,17 @@ body{
     display: flex;
     justify-content: space-between;
     }
-    .Header span{
-      padding: 10px;
-      margin: auto 0;
-      font-size: 15px;
+  .Header span {
+    padding: 9px;
+    margin: auto 0;
+    font-size: 15px;
     }
   .Header span a{
-    padding:5px;
+    padding:6px;
     text-decoration: none;
-    color: white;
     border: 2px solid white;
     border-radius: 5px;
+    color: white;
   
   }
   .Header span a:hover{
@@ -64,7 +66,7 @@ body{
     margin : 5px auto;
     width: 400px;
     font-size: 25px;
-    padding: 5px;
+    padding: 6px;
     text-align: center;
     border: 2px solid rgb(65, 113, 216);
     border-radius: 10px;

@@ -1,8 +1,8 @@
 <%= render partial: "search" %>
-<% if @current_user.is_clerk? || @current_user.is_owner? %>
+<% if @current_user.is_owner? %>
   <div class="Walk-In">
     <h2>
-    <%= image_tag "costumer.png" %>
+    <%= image_tag "buyer.png" %>
       Walk-in customer Order
     </h2>
   </div>

@@ -4,7 +4,7 @@
     Already an user?
     <%= link_to "Login here", new_session_path, class: "Login-Page" %>
   </p>
-  <%= form_with url: users_path, class: "signUp-form" do |form| %>
+  <%= form_with url: users_path, class: "SignUp-Form" do |form| %>
     <%= form.text_field :name,
                         placeholder: "Name" %>
     <br>
