@@ -76,6 +76,17 @@
   align-items: center;
 }
 
+.Cart-Address {
+  border: 2px solid black;
+  margin-left: 250px;
+  font-size: 25px;
+  padding: 15px;
+}
+.Address-Header {
+  margin-top: 100px;
+  margin-left: 250px;
+}
+
 .CartItem-quantity {
   font-size: 25px;
   margin-left: 60px;

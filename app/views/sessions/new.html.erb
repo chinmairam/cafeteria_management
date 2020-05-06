@@ -1,9 +1,5 @@
 <main class="SignUpMain">
   <%= form_with url: session_path, class: "SignUp-Form" do |form| %>
-    <p class="Login">
-      Are You New to Cafeteria
-      <%= link_to "Sign Up here", new_user_path, class: "SignUp-Link" %>
-    </p>
     <%= form.email_field :email,
                          placeholder: "Email" %>
     <br>
@@ -11,5 +7,9 @@
                             placeholder: "Password" %>
     <br>
     <%= form.submit "Log in", data: { "disable-with": "Signing in....." }, class: "Login-Button" %>
+    <p class="Login">
+      Are You New to Cafeteria
+      <%= link_to "Sign Up here", new_user_path, class: "SignUp-Link" %>
+    </p>
   <% end %>
 </main>

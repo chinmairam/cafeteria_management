@@ -1,6 +1,5 @@
 <% orders.each do |order| %>
   <div class="Orderone" id="<%= order.id %>">
-
       <div class ="Order-section">
         <p class="Order-sub">Order Id</p>
         <div class="Order-id"><%= order.id %></div>
@@ -11,10 +10,10 @@
 
         <% if order.user.is_clerk? || order.user.is_owner? %>
         <div class="Walk-image">
-          Walk In Customer
+          <%= Walk In Customer %>
        </div>
         <% else %>
-          <div class='User-name'>
+          <div class="User-name">
             <%= order.user.name.capitalize %>
           </div>
         <% end %>
@@ -34,8 +33,8 @@
             <% else %>
               style="color:green;font-weight:bold"
             <% end %> >
-    <%= order.order_status %>
-     </span>
+        <%= order.order_status %>
+      </span>
       <div class="Order-section">
         <p class="Order-sub">Ratings</p>
         <div class="Order-ratings">
@@ -44,11 +43,11 @@
       </div>
 
       <section class="Order-section" id="Order-details">
-          <div class="Order-sub"> Billing</p>
+          <div class="Order-sub"> Billing</div>
          <div class="Order-calculation" >
           <% order.all_menu_item_names.uniq.each do |menu_item| %>
                 <%= menu_item %> x <%= order.all_menu_item_names.count(menu_item).to_s %> =
-                <%= order.order_items.get_menu_item_price(menu_item) * order.all_menu_item_names.count(menu_item) %>
+                Rs. <%= order.order_items.get_menu_item_price(menu_item) * order.all_menu_item_names.count(menu_item) %>
           <% end %>
          </div>
       </section>

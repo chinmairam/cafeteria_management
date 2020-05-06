@@ -22,6 +22,10 @@ class Order < ApplicationRecord
     order_items.where(menu_item_name: menu_item_name).first
   end
 
+  def get_number_of_items(order_item)
+    order_items.where(id: order_item.id).count
+  end
+
   def all_menu_item_names
     order_items.order(:menu_item_name).map { |item| item.menu_item_name }
   end

@@ -38,9 +38,9 @@
           <div class="total-price"><%= @order.total_price %></div>
         </p>
         <%= form_with(model: @order, url: orders_path, method: "post", local: true) do |form| %>
-          <h2 class="Address-heading">Address</h2>
+          <h2 class="Address-Header">Address</h2>
           <div>
-           <%= text_area_tag "address", nil, rows: 5, cols: 30, class: "Cart-address" %>
+           <%= text_area_tag "address", nil, rows: 5, cols: 30, class: "Cart-Address" %>
          </div>
           <%= form.submit "Leave", class: "cart-checkout" %>
         <% end %>

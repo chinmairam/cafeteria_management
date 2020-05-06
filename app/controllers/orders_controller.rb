@@ -8,8 +8,11 @@ class OrdersController < ApplicationController
   end
 
   def show
-    ensure_owner_logged_in
-    if @current_user
+    @order = Order.find(params[:id])
+    @user = User.find(@order.user_id)
+    if @user.id == @current_user.id
+    else
+      ensure_owner_logged_in
     end
   end
 
@@ -19,7 +22,9 @@ class OrdersController < ApplicationController
       redirect_to(cart_path, alert: "Order should have atleast 1 fooditem")
     else
       @order.status = "order_confirmed"
+      @order.address = params[:address]
       @order.date = Time.now + 20000
+      @order.ordered_at = Time.now + 2000
       @order.save!
       flash[:notice] = "Order recived! Soon your order will be delivered"
       redirect_to orders_path

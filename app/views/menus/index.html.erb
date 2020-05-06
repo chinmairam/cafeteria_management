@@ -2,13 +2,13 @@
 <% if @current_user.is_owner? %>
   <div class="Walk-In">
     <h2>
-    <%= image_tag "buyer.png" %>
       Walk-in customer Order
+      <%= image_tag "buyer.png" %>
+
     </h2>
   </div>
 <% end %>
 <div class="MenuItems">
- 
   <%= render partial: "menu" %>
   <%= render partial: "menu_items/menulist" %>
 </div>

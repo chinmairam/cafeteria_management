@@ -61,3 +61,39 @@
     99%{border-top: 2px solid tomato;border-bottom: 2px solid tomato;}
     100%{border: 1px dotted grey;}
   }
+
+  .Profile-Main {
+    max-width: 600px;
+    margin: 0 auto;
+    align-items: center;
+  }
+  .Profile-Image {
+    text-align: center;
+  }
+  
+  .Details {
+    text-align: center;
+    margin-top: 21px;
+    font-size: 25px;
+  }
+  .Details-block {
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 6px;
+    border: 1px solid black;
+    -webkit-box-shadow: -1px 1px 5px 9px grey;
+    box-shadow: -1px 1px 5px 9px grey;
+  }
+  
+  .Welcome-mesg {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 20px;
+    color: green;
+  }
+
+  .Details-Edit {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 35px;
+  }
