@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
       @order.date = Time.now + 20000
       @order.save!
       flash[:notice] = "Order recived! Soon your order will be delivered"
-      redirect_to menus_path
+      redirect_to orders_path
     end
   end
 
@@ -43,6 +43,16 @@ class OrdersController < ApplicationController
   def all_orders
     ensure_owner_logged_in
     @all_orders = Order.order(id: :desc)
+  end
+
+  def destroy
+    order = Order.find(params[:id])
+    if order.user_id == @current_user.id
+      order.destroy
+    else
+      flash[:alert] = "You are not permitted"
+    end
+    redirect_to orders_path
   end
 
   def rating

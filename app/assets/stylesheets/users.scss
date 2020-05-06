@@ -26,10 +26,16 @@
     font-size: bold;
     border-bottom:2px solid grey ;
   }
-  td{
+
+  td { 
     font-size: 18px;
     border-bottom: 1px dotted grey;
   }
+
+  .Personas {
+    margin-top: 50px;
+  }
+
   .User-Data:hover{
     background-color: rgb(226, 224, 224);
   }

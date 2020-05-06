@@ -25,11 +25,18 @@
   font-family: sans-serif;
 }
 
+.Cart-Heading {
+  max-width: 100px;
+  margin-bottom: 35px;
+  margin: 0 auto;
+}
+
 .Cart-item{
   display: flex;
   align-items: center;
   padding: 5px;
   margin-left: 5px;
+
 }
 .Cart-item > span{
   font-size: 18px;
@@ -49,11 +56,11 @@
 .cart-checkout{
   width:300px;
   display: flex;
-  align-items: center;
-  margin: 8px auto;
   border: 2px solid transparent;
   font-size: 20px;
   color: white;
+  align-items: center;
+  margin: 8px auto;
   background-color: #a13cf9;
   border-radius: 5px;
   padding: 8px;
@@ -67,6 +74,12 @@
 .CartItem > .total-price{
   display: flex;
   align-items: center;
+}
+
+.CartItem-quantity {
+  font-size: 25px;
+  margin-left: 60px;
+  display: inline-flex;
 }
 .CartItem-add{
   padding: 5px;

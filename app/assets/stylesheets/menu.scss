@@ -1,4 +1,4 @@
-.WalkIn{
+  .WalkIn{
     max-width: 70%;
     margin: 5px auto;
   }
@@ -41,6 +41,14 @@
     margin-left: auto;
     padding: 2px 8px;
   }
+
+  .MenuList-Header {
+    font-size: 35px;
+    font-weight: 350px;
+    color: black;
+    margin-bottom: 10px;
+  }
+
   .MenuItem {
     height: 65px;
     margin: 5px;
@@ -52,6 +60,7 @@
     font-family: sans-serif;
   }
   .MenuItems{
+    display: flex;
     width: 85%;
     margin: 0 auto;
   }
@@ -92,6 +101,12 @@
     width: 20px;
     padding: 5px;
    }
+
+   @keyframes MenuHighlight{
+    0%{background-color: #a13cf9;color: white;}
+    99%{background-color: #a13cf9;color: white;}
+    100%{background-color: white;color: black;}
+  }
   
   .Menu:hover > .MenuItem-delete{
     display: inline-block;
@@ -117,11 +132,4 @@
   .MenuItem-rating{
     padding: 3px;
     margin-left: 5px;
-  }
-  
-  
-  @keyframes MenuHighlight{
-    0%{background-color: #a13cf9;color: white;}
-    99%{background-color: #a13cf9;color: white;}
-    100%{background-color: white;color: black;}
   }

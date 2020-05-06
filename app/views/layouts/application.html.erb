@@ -22,8 +22,7 @@
     <nav class="navbar">
     <div class="navbar-logo">
       <h2 class="navbarHeader">
-      <%= image_tag "chef.png" %>WELCOME TO PK-PLAZA
-      </h2>
+      <%= image_tag "chef.png" %>WELCOME TO PK-PLAZA </h2>
       <%= image_tag "image.png" %>
     </div>
     <div class="Buttons-container">
@@ -51,6 +50,14 @@
               <%= image_tag "List.png" %>
               <%= link_to "All Orders", all_orders_path %>
             </li>
+            <li class="navbarButton">
+                <%= image_tag "price.png" %>
+                <%= link_to "Sale Reports", all_orders_path %>
+            </li>
+            <li class="navbarButton">
+              <%= image_tag "user1.png" %>
+               <%= link_to "Users", users_path %>
+            </li>
           <% end %>
           <li class="navbarButton">
             <%= image_tag "order.png" %>
@@ -77,7 +84,7 @@
       </ul>
     </nav>
      <div class="SearchItem">
-       <h3>Order Online</h3>
+     <h3>Order Online</h3>
        <div class="Food-Icons"> <%= image_tag "krusher.png" %> </div>
        <%= yield :head %>
        <%= yield :search %>

@@ -5,14 +5,13 @@
       <h2 class="empty-cart">Your cart is empty</h2>
     <% else %>
       <div class="Cart-item-price">
-        <p class="Cart-item-heading" >
-          <span>Item Name</span >
-          <span class="total-price">Price</span>
-        </p>
         <ul>
+        <div class="Cart-Items">
           <% @order.all_menu_item_names.uniq.each do |menu_item_name| %>
             <li class="Cart-item" >
-              <div><%= menu_item_name %></div>
+              <div class="Cart-Item-Name"><%= menu_item_name %></div>
+              <div class="CartItem-quantity">
+                  Quantity =
               <span class="total-price">
                 <p class="CartItem-add">
                   <%= link_to "-",
@@ -22,19 +21,27 @@
                   <%= link_to "+",
                               order_items_path(menu_item_id: @order.order_item(menu_item_name).menu_item_id, cart: 1),
                               { :method => :post } %>
+                      
                 </p>
+                </div>
                 <p class="qty">
                   Rs <%= @order.order_items.get_menu_item_price(menu_item_name) * @order.all_menu_item_names.count(menu_item_name) %>
                 </p>
               </span>
+              </div>
             </li>
           <% end %>
+          </div>
         </ul>
         <p class="Cart-total-price" >
           <div>Total Price</div >
           <div class="total-price"><%= @order.total_price %></div>
         </p>
         <%= form_with(model: @order, url: orders_path, method: "post", local: true) do |form| %>
+          <h2 class="Address-heading">Address</h2>
+          <div>
+           <%= text_area_tag "address", nil, rows: 5, cols: 30, class: "Cart-address" %>
+         </div>
           <%= form.submit "Leave", class: "cart-checkout" %>
         <% end %>
       </div>
