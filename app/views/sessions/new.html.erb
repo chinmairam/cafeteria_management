@@ -1,15 +1,15 @@
 <main class="SignUpMain">
   <%= form_with url: session_path, class: "SignUp-Form" do |form| %>
     <%= form.email_field :email,
-                         placeholder: "Email" %>
+                         placeholder: "Email", autofocus: true %>
     <br>
     <%= form.password_field :password,
                             placeholder: "Password" %>
     <br>
     <%= form.submit "Log in", data: { "disable-with": "Signing in....." }, class: "Login-Button" %>
-    <p class="Login">
+    <h3 class="Login">
       Are You New to Cafeteria
       <%= link_to "Sign Up here", new_user_path, class: "SignUp-Link" %>
-    </p>
+    </h3>
   <% end %>
 </main>

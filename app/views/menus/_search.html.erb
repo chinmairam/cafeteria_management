@@ -17,12 +17,13 @@
               <option class="Dropdown-content" value=<%= menu.name %>> <%= menu.name %> </option>
             <% end %>
             <option class="Dropdown-content" value="Add a Menu">Add a Menu</option>
+            <option value="Others"> Other </option>
           </select>
         </div>
         <%= form.text_field :name, placeholder: "Item name" %>
         <%= form.number_field :price, placeholder: "Item price" %>
         <%= form.text_field :description, placeholder: "Description of item" %>
-        <%= form.text_field :menu_name, placeholder: "Menu name" %>
+        <%= form.text_field :new_menu_name, placeholder: "Menu name" %>
         <%= form.submit %>
       <% end %>
     </div>

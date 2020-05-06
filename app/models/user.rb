@@ -1,9 +1,8 @@
 class User < ApplicationRecord
+  validates :name, presence: true
+  validates :email, presence: true
   has_secure_password
   has_many :orders
-  validates :name, presence: true
-  validates :email, presence: true, uniqueness: true
-  validates :password, length: { in: 3..75 }
 
   def is_clerk?
     clerk = role == "clerk" ? true : false
@@ -14,11 +13,11 @@ class User < ApplicationRecord
   end
 
   def self.clerks
-    where("role = ?", "clerk")
+    User.all.where("role = ?", "clerk")
   end
 
   def self.customers
-    where("role = ?", "customer")
+    User.all.where("role = ?", "customer")
   end
 
   def self.get_user_by_email(email)

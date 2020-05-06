@@ -18,6 +18,10 @@ class Order < ApplicationRecord
     where("status= ?", "being_created").first
   end
 
+  def to_a_string
+    "#{id} #{order_id} #{menu_item_id} #{menu_item_name} #{menu_item_price}"
+  end
+
   def order_item(menu_item_name)
     order_items.where(menu_item_name: menu_item_name).first
   end

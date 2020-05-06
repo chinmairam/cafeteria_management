@@ -1,11 +1,15 @@
 class MenusController < ApplicationController
-  
   def index
     @menus = Menu.order(:name)
     @order = current_user.orders.being_created
   end
 
   def show
+    @id = params[:id]
+    menu = Menu.find(@id)
+    @name = menu.name
+    @menu_items = menu.menu_items.order(:id)
+    render "show"
   end
 
   def create

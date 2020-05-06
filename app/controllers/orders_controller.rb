@@ -24,7 +24,7 @@ class OrdersController < ApplicationController
       @order.status = "order_confirmed"
       @order.address = params[:address]
       @order.date = Time.now + 20000
-      @order.ordered_at = Time.now + 2000
+      @order.ordered_at = DateTime.now
       @order.save!
       flash[:notice] = "Order recived! Soon your order will be delivered"
       redirect_to orders_path

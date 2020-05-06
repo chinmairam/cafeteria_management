@@ -9,10 +9,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    email = params[:email]
-    password = params[:password]
-    user = User.find_by(email: email)
-    if user && user_authenticate(password)
+    user = User.find_by(email: params[:email])
+    if user && user_authenticate(params[:password])
       session[:current_user_id] = user.id
       flash[:notice] = "You are signed in successfully"
       redirect_to menus_path
@@ -26,6 +24,6 @@ class SessionsController < ApplicationController
     session[:current_user_id] = nil
     @current_user = nil
     flash[:notice] = "You are logged out successfully!"
-    redirect_to root_path
+    redirect_to "root_path"
   end
 end
