@@ -9,7 +9,7 @@
           <p>
             <%= menu_item.name %>
             <span class="MenuItem-rating">
-              <% menu - item.ratings.to_i.times do %>
+              <% menu_item.ratings.to_i.times do %>
                <%= image_tag "rate.png" %>
               <% end %>
               <% (5 - menu_item.ratings.to_i).times do %>
@@ -22,7 +22,7 @@
             </span>
           </p>
           <p class="UpdateItem">
-          <% if @current_user.is_owner? %>
+            <% if @current_user.is_owner? %>
               <p class="MenuItem-delete">
                 <%= link_to edit_menu_item_path(id: menu_item.id) do %>
                   <%= image_tag "edit1.png" %>
@@ -30,9 +30,9 @@
                 <%= link_to menu_item, method: :delete, data: { confirm: "Are you sure?" } do %>
                   <%= image_tag "trash-can-outline.png" %>
                 <% end %>
-              </p>
+          </p>
             <% end %>
-            <p class="OrderItem-add">
+            <p class="OrderItem-add" >
             <% if @order %>
               <% if @order.order_items.get_order_item(menu_item.id).exists? %>
                 <%= link_to "-", order_item_path(id: @order.order_item(menu_item.name).id),

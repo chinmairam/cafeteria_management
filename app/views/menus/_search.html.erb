@@ -6,7 +6,7 @@
     </form>
   </div>
   <% if @current_user.is_owner? %>
-    <div class="AddItem" id="Add-item-form">
+    <div class="AddItem" id="Add-Item-form">
     <p class="Add-heading">Add Items
     </p>
       <%= form_with(model: @menu, url: menu_items_url, method: "post", local: true) do |form| %>
@@ -24,7 +24,7 @@
         <%= form.number_field :price, placeholder: "Item price" %>
         <%= form.text_field :description, placeholder: "Description of item" %>
         <%= form.text_field :new_menu_name, placeholder: "Menu name" %>
-        <%= form.submit %>
+        <%= form.submit value = "Add" %>
       <% end %>
     </div>
   <% end %>

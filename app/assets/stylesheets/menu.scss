@@ -16,7 +16,7 @@
     width: 25%;
     margin: 5px;
     border-right: 2px dotted rgba(197, 194, 194, 0.966);
-    margin-left: 100px;
+    margin-left: 300px;
     margin-top: 50px;
   }
   .MenuName{
@@ -24,7 +24,9 @@
     padding: 5px;
     font-weight: bold;
     font-family: sans-serif;
-    color: rgba(0, 0, 0, 0.849);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: blueviolet;
   }
   h3.MenuName:target{
     animation: menuHighlight 15s 1;
@@ -33,7 +35,9 @@
     margin: 5px;
     padding: 5px;
     text-align: right;
+    font-size: 20px;
     display: flex;
+    width: 200px;
     align-items: center;
   }
   .Menu > a{
@@ -76,12 +80,13 @@
   }
   
    .Update-item{
-     margin-left: auto;
      margin-right: 15px;
+     text-align: center;
+     display: flex;
     }
   
     .OrderItem-add{
-     color: #a13cf9;
+     background-color: #a13cf9;
      border-radius: 6px;
      padding: 8px;
     }
@@ -93,8 +98,10 @@
      font-size: 18px;
    }
    .MenuItem-price{
-     max-width: 35px;
+     width: 200px;
+     text-align: center;
      color: #535665;
+     display: block;
    }
    .OrderItem-add > a{
     color: #a13cf9;
@@ -108,28 +115,28 @@
     100%{background-color: white;color: black;}
   }
   
-  .Menu:hover > .MenuItem-delete{
-    display: inline-block;
+  .Menu:hover  .MenuItem-delete{
+    display: block;
   }
   .MenuItem-delete{
     display: none;
-    margin-left: auto;
   }
   .MenuItem-delete > a img{
-    margin-left: auto;
     padding: 8px;
   }
-  .MenuItem:hover > .MenuItem-delete{
-    display: inline-block;
-  }
+ 
   .MenuItem-description{
     font-size: 15px;
-    margin-left:25px;
     padding: 5px;
     color:#7e808c;
+    text-align: center;
+    display: block;
     border-left: 1px dotted black;
   }
   .MenuItem-rating{
     padding: 3px;
     margin-left: 5px;
+    width: 200px;
+    display: block;
+    text-align: center;
   }

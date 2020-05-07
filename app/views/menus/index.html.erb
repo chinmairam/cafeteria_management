@@ -9,6 +9,8 @@
   </div>
 <% end %>
 <div class="MenuItems">
+ <% if @current_user.role == "owner" %>
   <%= render partial: "menu" %>
+ <% end %>
   <%= render partial: "menu_items/menulist" %>
 </div>

@@ -4,7 +4,7 @@
   }
   
   
-  .SearchItem{
+  .Item-Search{
     max-width: 100%;
     margin: 0px auto;
     padding: 8px;
@@ -20,7 +20,9 @@
     margin: 0px auto;
   }
   .AddItem > form{
-    margin: 10px auto;
+    background-color: red;
+    margin-bottom: 100px;
+    margin-left: 110px;
     padding: 10px;
   }
   .AddItem > form > input{

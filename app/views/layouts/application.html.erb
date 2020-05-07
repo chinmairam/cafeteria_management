@@ -4,7 +4,6 @@
     <title>CafeteriaManagement</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
     <%= javascript_pack_tag "application", 'data-turbolinks-track': "reload" %>
     <script>
@@ -38,6 +37,10 @@
           <li class="navbarButton">
            <%= image_tag "main.png" %>
             <%= link_to "Home", menus_path %>
+          </li>
+          <li class="navbarButton">
+           <%= image_tag "account.png" %>
+           <%= link_to "Profile", user_path(id: @current_user.id) %>
           </li>
           <% if @current_user.is_clerk? || @current_user.is_owner? %>
             <li class="navbarButton">
