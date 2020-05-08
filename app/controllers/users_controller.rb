@@ -40,4 +40,32 @@ class UsersController < ApplicationController
       redirect_to new_user_path
     end
   end
+
+  def clerk
+    ensure_owner_logged_in
+    name = params[:name]
+    email = params[:email]
+    password = params[:password]
+    user = User.new(name: name.capitalize, email: email, role: "clerk", password: password)
+    if user.save
+      user.save!
+      session[:current_user_id] = user.id
+      redirect_to request.referer
+    else
+      flash[:error] = user.errors.full_messages
+      redirect_to request.referer
+    end
+  end
+
+  def clerk_update
+    ensure_owner_logged_in
+    id = params[:id]
+    user = User.find(id)
+    if user.is_clerk?
+      user.destroy
+    else
+      flash[:alert] = "Role can't be changed"
+    end
+    redirect_to request.referer
+  end
 end

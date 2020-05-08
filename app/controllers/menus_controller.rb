@@ -1,7 +1,7 @@
 class MenusController < ApplicationController
   def index
     @menus = Menu.order(:name)
-    @order = current_user.orders.being_created
+    @order = @current_user.orders.being_created
   end
 
   def show
@@ -14,7 +14,7 @@ class MenusController < ApplicationController
 
   def create
     menu = Menu.create!(name: params[:name].capitalize)
-    render plain: "Created #{menu.name} with #{menu.id}"
+    flash[:notice] = "Menu added!"
   end
 
   def destroy

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: "home#index"
   put "/orders/rating", to: "orders#rating", as: :order_rating
-  get "orders/all", to: "orders#all_orders", as: :all_orders
+  get "/orders/all", to: "orders#all_orders", as: :all_orders
   resources :menus, :menu_items, :orders, :order_items, :users
   get "/cart", to: "orders#cart", as: :cart
   get "/pending_orders", to: "orders#pending_orders", as: :pending_orders

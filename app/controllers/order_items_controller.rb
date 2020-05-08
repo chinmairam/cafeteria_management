@@ -1,7 +1,4 @@
 class OrderItemsController < ApplicationController
-  skip_before_action :verify_authenticity_token
-  skip_before_action :ensure_user_logged_in
-
   def index
     render plain: OrderItem.all.map { |order| order.to_a_string }.join("\n")
   end
@@ -17,7 +14,7 @@ class OrderItemsController < ApplicationController
                                    menu_item_id: menu_item.id,
                                    menu_item_name: menu_item.name,
                                    menu_item_price: menu_item.price)
-    flash[:notice] = "#{order_item.menu_item_name} is added to cart!"
+    flash[:notice] = "#{order_item.menu_item_name} is placed into cart!"
     if params[:cart]
       redirect_to cart_path
     else

@@ -54,10 +54,11 @@ class OrdersController < ApplicationController
     order = Order.find(params[:id])
     if order.user_id == @current_user.id
       order.destroy
+      flash[:notice] = "Order deleted"
     else
       flash[:alert] = "You are not permitted"
     end
-    redirect_to orders_path
+    redirect_to request.referer
   end
 
   def rating
@@ -65,6 +66,7 @@ class OrdersController < ApplicationController
     @order.ratings = params[:rating]
     @order.save!
     @order.order_items.rate_menu_items(params[:rating])
-    redirect_to(orders_path, notice: "Thanks for rating order ")
+    flash[:notice] = "Thanks for rating"
+    redirect_to request.referer
   end
 end
