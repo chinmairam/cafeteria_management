@@ -38,6 +38,15 @@ class Order < ApplicationRecord
     order = all.where("id = ?", id).exists? ? find(id) : false
   end
 
+  def walkin_order?
+    user = User.find(user_id)
+    if user.is_owner? || user.is_clerk?
+      true
+    else
+      false
+    end
+  end
+
   def order_status
     if status == "being_created"
       "Being Created"
