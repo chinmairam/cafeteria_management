@@ -7,7 +7,7 @@
     color: rgba(94, 121, 185, 0.91);
   }
   .MenuItems{
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 auto;
     font-family: sans-serif;
   }
@@ -15,7 +15,7 @@
     width: 25%;
     margin: 5px;
     border-right: 2px dotted rgba(197, 194, 194, 0.966);
-    margin-left: 300px;
+    margin-left: 400px;
     margin-top: 50px;
   }
 
@@ -24,8 +24,8 @@
     padding: 5px;
     font-weight: bold;
     font-family: sans-serif;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     color: crimson;
   }
 
@@ -34,12 +34,11 @@
   }
 
   .Menu{
-    margin: 5px;
     padding: 12px;
     text-align: right;
-    font-size: 20px;
+    font-size: 25px;
     display: flex;
-    width: 200px;
+    width: 300px;
     align-items: center;
   }
 
@@ -47,17 +46,12 @@
     background-color: white;
   }
 
-  .Menu > a{
-    color: #0509c4;
-    margin-left: auto;
-    padding: 2px 8px;
-  }
-
   .MenuList-Header {
-    font-size: 35px;
-    font-weight: 350px;
+    font-size: 30px;
+    font-weight: 300px;
     color: black;
     margin-bottom: 10px;
+    margin-top: 50px;
   }
 
   .MenuItem-Name {
@@ -67,19 +61,19 @@
     font-size: 20px;
   }
   .MenuItem {
-    height: 60px;
+    height: 65px;
     margin: 5px;
-    padding: 7px;
-    margin-left: 25px;
     vertical-align: middle;
     display: flex;
+    padding-bottom: 50px;
     align-items: center;
     font-family: sans-serif;
   }
   .MenuItems {
     width: 100%;
     margin-right: 100px;
-    padding-top: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
   
 
@@ -92,7 +86,7 @@
   }
   
    .Update-item{
-     margin-right: 15px;
+     margin-right: 20px;
      text-align: center;
      margin-bottom: 200px;
      display: flex;
@@ -100,20 +94,20 @@
   
     .OrderItem-add{
      background-color: white;
-     border-radius: 6px;
+     border-radius: 4px;
      padding: 8px;
     }
   
    .MenuItem-details{
      display: block;
-     padding: 5px;
+     padding: 2px;
      margin: 5px;
-     font-size: 18px;
+     font-size: 19px;
    }
    .MenuItem-price{
      width: 300px;
      text-align: center;
-     color: #535665;
+     font-size: 25px;
      display: block;
    }
    .OrderItem-add > a{
@@ -135,7 +129,7 @@
   .MenuItem-delete{
     display: none;
     visibility: hidden;
-    margin-left: 20px;
+    margin-left: 30px;
   }
   .MenuItem-delete:hover {
     background-color: lightskyblue;
@@ -155,20 +149,17 @@
   }
  
   .MenuItem-description{
-    font-size: 20px;
+    font-size: 22px;
     padding: 5px;
     width: 300px;
-    color:#7e808c;
     text-align: center;
     display: block;
-    border-left: 1px dotted black;
   }
 
   .MenuItem-rating{
     padding: 3px;
-    font-size: 20px;
-    margin-left: 5px;
-    width: 200px;
+    font-size: 25px;
+    width: 300px;
     display: block;
     text-align: center;
   }
