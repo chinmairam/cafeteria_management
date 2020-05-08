@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     email = params[:email]
     password = params[:password]
     user = User.find_by(email: email)
-    if user && user_authenticate(password)
+    if user && user.authenticate(password)
       session[:current_user_id] = user.id
       flash[:notice] = "You are signed in successfully"
       redirect_to menus_path
