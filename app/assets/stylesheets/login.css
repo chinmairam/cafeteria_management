@@ -24,11 +24,13 @@ body {
     display: flex;
     justify-content: space-between;
     }
+
   .Header span {
     padding: 9px;
     margin: auto 0;
     font-size: 15px;
     }
+    
   .Header span a{
     padding:6px;
     text-decoration: none;

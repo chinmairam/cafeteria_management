@@ -11,13 +11,12 @@
     </p>
       <%= form_with(model: @menu, url: menu_items_url, method: "post", local: true) do |form| %>
         <div class="costum-select">
-          <select name="menu_name" onchange=show_box(this.value)>
-           <option value="" disabled selected style="color:#7e808c">Add a Menu</option>
+          <select name="id" onchange=show_box(this.value)>
+           <option value="" disabled selected style="color:#7e808c">Select a Menu</option>
             <% Menu.order(:name).each do |menu| %>
-              <option class="Dropdown-content" value=<%= menu.name %>> <%= menu.name %> </option>
+              <option class="Dropdown-content" value=<%= menu.id %>> <%= menu.name %> </option>
             <% end %>
-            <option class="Dropdown-content" value="Add a Menu">Add a Menu</option>
-            <option value="Others"> Other </option>
+            <option value="Add a Menu"> Add a Menu </option>
           </select>
         </div>
         <%= form.text_field :name, placeholder: "Item name" %>

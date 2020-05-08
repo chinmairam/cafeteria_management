@@ -9,10 +9,9 @@
         <div class="Cart-Items">
           <% @order.all_menu_item_names.uniq.each do |menu_item_name| %>
             <li class="Cart-item" >
-              <div class="Cart-Item-Name"><%= menu_item_name %></div>
+              <div class="Cart-Item-Name">Item :<%= menu_item_name %></div>
               <div class="CartItem-quantity">
                   Quantity =
-              <span class="total-price">
                 <p class="CartItem-add">
                   <%= link_to "-",
                               order_item_path(id: @order.order_item(menu_item_name).id, cart: 1),
@@ -26,14 +25,13 @@
                 <div class="qty">
                   Rs <%= @order.order_items.get_menu_item_price(menu_item_name) * @order.all_menu_item_names.count(menu_item_name) %>
                 </div>
-              </span>
               </div>
             </li>
           <% end %>
           </div>
         </ul>
         <p class="Cart-total-price" >
-          <div>Total Price</div>
+          <div>Total Price :</div>
           <div class="total-price"><%= @order.total_price %></div>
         </p>
         <%= form_with(model: @order, url: orders_path, method: "post", local: true) do |form| %>

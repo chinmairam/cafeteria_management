@@ -16,11 +16,11 @@
     <br>
     <%= form.text_field :role, value: "customer", readonly: true %>
     <br>
-    <%= form.submit "Sign up", data: { "disable-with": "Signing up....." }, class: "SignUp-Button" %>
-  <p class="SignUp-Login">
-    Already an user?
-    <%= link_to "Login here", new_session_path, class: "Login-Page" %>
-  </p>
+    <%= form.submit "Sign up", data: { "disable-with": "Entering" }, class: "SignUp-Button" %>
+    <p class="SignUp-Login">
+      Already an user?
+      <%= link_to "Login here", new_session_path, class: "Login-Page" %>
+    </p>
   <% end %>
 
  </section>

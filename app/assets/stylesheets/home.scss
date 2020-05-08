@@ -35,7 +35,7 @@ body {
   margin-left:auto ;
   margin-top: 150px;
 }
-.navbarButton{
+.navbarButton {
   display: flex;
   align-items: center;
   list-style: none;
@@ -55,7 +55,7 @@ body {
   display: inline-block
 }
 
-.navbarButton > a{
+.navbarButton > a {
   text-decoration: none;
   color: rgba(24, 23, 23, 0.842);
   font-family: sans-serif;
@@ -63,10 +63,10 @@ body {
   text-align: center;
   padding: 5px;
 }
-.navbarButton > a:hover{
+.navbarButton > a:hover {
   color: crimson;
 }
-.alert,#error_string{
+.alert,#error_string {
   font-family: sans-serif;
   max-width: 50%;
   margin: 0 auto;
@@ -75,24 +75,24 @@ body {
   color: red;
   font-size: 20px;
 }
-#error_string h2{
+#error_string h2 {
   font-size: 21px;
   font-weight: bold;
 }
-.error-msg{
+.error-msg {
   text-align: left;
 }
-.Home-Top{
+.Home-Top {
   font-family: sans-serif;
   padding: 8px;
   text-align: center;
   color: rgba(255, 68, 0, 0.904);
 }
-.order-button{
+.order-button {
   margin: 5px auto;
   text-align: center;
 }
-.order-button > a{
+.order-button > a {
   font-size: 26px;
   font-family: sans-serif;
   text-decoration: none;

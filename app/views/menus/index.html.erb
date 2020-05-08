@@ -1,11 +1,10 @@
 <%= render partial: "search" %>
 <% if @current_user.is_owner? %>
   <div class="Walk-In">
-    <h2>
+    <h3>
       Walk-in customer Order
       <%= image_tag "buyer.png" %>
-
-    </h2>
+    </h3>
   </div>
 <% end %>
 <div class="MenuItems">
