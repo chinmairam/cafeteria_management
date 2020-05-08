@@ -17,8 +17,9 @@
   }
   
   .Login-Page {
-    text-decoration: none;
     color: rgb(199, 26, 26);
+    text-decoration: none;
+
   }
   
   .SignUp-Form input[type="text"] ,input[type="password"],.Item-pricechange ,#user_name {

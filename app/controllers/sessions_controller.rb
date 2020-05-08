@@ -8,13 +8,18 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:email])
-    if user && user_authenticate(params[:password])
+    email = params[:email]
+    password = params[:password]
+    user = User.find_by(email: email)
+    if user && user_authenticate(password)
       session[:current_user_id] = user.id
       flash[:notice] = "You are signed in successfully"
       redirect_to menus_path
+    elsif user
+      flash[:alert] = "Incorrect Password"
+      redirect_to new_session_path
     else
-      flash[:alert] = "No account with given email"
+      flash[:alert] = "No Account with given email"
       redirect_to new_session_path
     end
   end
@@ -23,6 +28,6 @@ class SessionsController < ApplicationController
     session[:current_user_id] = nil
     @current_user = nil
     flash[:notice] = "You are logged out successfully!"
-    redirect_to "root_path"
+    redirect_to root_path
   end
 end

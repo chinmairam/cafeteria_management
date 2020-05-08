@@ -27,15 +27,14 @@ ActiveRecord::Schema.define(version: 2020_04_22_050754) do
     t.text "description"
     t.integer "price"
     t.boolean "active"
-    t.decimal "ratings"
-    t.integer "no_of_ratings"
+    t.decimal "ratings", precision: 2, scale: 1, default: "0.0"
+    t.integer "no_of_ratings", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "menus", force: :cascade do |t|
     t.text "name"
-    t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -53,7 +52,7 @@ ActiveRecord::Schema.define(version: 2020_04_22_050754) do
     t.date "date"
     t.integer "user_id"
     t.text "address"
-    t.integer "ratings"
+    t.integer "ratings", default: 0
     t.datetime "delivered_at"
     t.datetime "ordered_at"
     t.string "status", default: "being_created"

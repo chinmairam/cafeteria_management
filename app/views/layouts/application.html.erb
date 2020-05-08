@@ -17,7 +17,7 @@
   </head>
 
   <body>
-    <div class="head-page">
+  <div class="head-page">
     <nav class="navbar">
     <div class="navbar-logo">
       <h2 class="navbarHeader">
@@ -42,7 +42,7 @@
            <%= image_tag "account.png" %>
            <%= link_to "Profile", user_path(id: @current_user.id) %>
           </li>
-          <% if @current_user.is_clerk? || @current_user.is_owner? %>
+          <% if @current_user.is_owner? || @current_user.is_clerk? %>
             <li class="navbarButton">
               <%= image_tag "leftorders.png" %>
               <%= link_to "Pending Orders", pending_orders_path %>
@@ -58,55 +58,55 @@
                 <%= link_to "Sale Reports", all_orders_path %>
             </li>
             <li class="navbarButton">
-              <%= image_tag "user1.png" %>
+            <%= image_tag "user1.png" %>
                <%= link_to "Users", users_path %>
             </li>
-          <% end %>
-          <li class="navbarButton">
-            <%= image_tag "order.png" %>
-            <%= link_to "Orders", orders_path %>
-          </li>
-          <li class="navbarButton">
-            <%= image_tag "cart.png" %>
-            <%= link_to "Cart", cart_path %>
-          </li>
-          <li class="navbarButton">
-            <%= image_tag "logout.png" %>
-            <%= link_to "LogOut", destroy_session_path, method: :delete %>
-          </li>
-        <% else %>
-          <li class="navbarButton">
-            <%= image_tag "Login.png" %>
-            <%= link_to "Sign In", new_session_path %>
-          </li>
-          <li class="navbarButton">
-            <%= image_tag "signup.png" %>
-            <%= link_to "Sign Up", new_user_path %>
-          </li>
-        <% end %>
-      </ul>
-    </nav>
-     <div class="SearchItem">
-     <h3>Order Online</h3>
-       <div class="Food-Icons"> <%= image_tag "krusher.png" %> </div>
-       <%= yield :head %>
-       <%= yield :search %>
-     </div>
-      <% if flash.alert %>
-       <p class="alert"><%= alert %></p>
-      <% end %>
-      <% if flash[:error] %>
-       <div id="error_string">
-        <h2>
-          <%= pluralize(flash[:error].count, "error") %> Please try again
-        </h2>
-        <ul>
-          <% flash[:error].each_with_index do |msg, index| %>
-            <li class="error-msg"><%= "#{index + 1}.#{msg}" %></li>
+            <% end %>
+            <li class="navbarButton">
+              <%= image_tag "order.png" %>
+              <%= link_to "Orders", orders_path %>
+            </li>
+            <li class="navbarButton">
+              <%= image_tag "cart.png" %>
+              <%= link_to "Cart", cart_path %>
+            </li>
+            <li class="navbarButton">
+              <%= image_tag "logout.png" %>
+              <%= link_to "LogOut", destroy_session_path, method: :delete %>
+            </li>
+          <% else %>
+            <li class="navbarButton">
+              <%= image_tag "Login.png" %>
+              <%= link_to "Sign In", new_session_path %>
+            </li>
+            <li class="navbarButton">
+              <%= image_tag "signup.png" %>
+              <%= link_to "Sign Up", new_user_path %>
+            </li>
           <% end %>
         </ul>
-       </div>
-      <% end %>
+      </nav>
+      <div class="SearchItem">
+      <h3>Order Online</h3>
+        <div class="Food-Icons"> <%= image_tag "krusher.png" %> </div>
+        <%= yield :head %>
+        <%= yield :search %>
+      </div>
+       <% if flash.alert %>
+        <p class="alert"><%= alert %></p>
+       <% end %>
+       <% if flash[:error] %>
+        <div id="error_string">
+         <h2>
+           <%= pluralize(flash[:error].count, "error") %> Please try again
+         </h2>
+         <ul>
+           <% flash[:error].each_with_index do |msg, index| %>
+             <li class="error-msg"><%= "#{index + 1}.#{msg}" %></li>
+           <% end %>
+         </ul>
+        </div>
+       <% end %>
   </div>
        <%= yield %>
        

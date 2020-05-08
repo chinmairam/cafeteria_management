@@ -28,8 +28,6 @@
     <%= form.password_field :password,
                             placeholder: "Password" %>
     <br>
-    <%= form.text_field :role, value: "customer", readonly: true %>
-    <br>
     <%= form.submit "Join", data: { "disable-with": "Entering" }, class: "SignUp-Button" %>
   <% end %>
 </div>

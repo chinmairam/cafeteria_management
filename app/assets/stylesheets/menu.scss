@@ -155,8 +155,9 @@
   }
  
   .MenuItem-description{
-    font-size: 15px;
+    font-size: 20px;
     padding: 5px;
+    width: 300px;
     color:#7e808c;
     text-align: center;
     display: block;
@@ -165,6 +166,7 @@
 
   .MenuItem-rating{
     padding: 3px;
+    font-size: 20px;
     margin-left: 5px;
     width: 200px;
     display: block;

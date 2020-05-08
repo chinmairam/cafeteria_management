@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
-  skip_before_action :ensure_user_logged_in
+  skip_before_action :verify_authenticity_token
+  skip_before_action :ensure_user_logged_in, only: [:create, :new]
 
   def new
     if current_user
       flash[:notice] = "You are already signed up user"
       redirect_to menus_path
+    else
+      render "users/new"
     end
   end
 
@@ -20,12 +23,6 @@ class UsersController < ApplicationController
     @customers = User.customers
   end
 
-  def edit
-    unless current_user
-      redirect_to root_path
-    end
-  end
-
   def create
     name = params[:name]
     email = params[:email]
@@ -36,8 +33,14 @@ class UsersController < ApplicationController
       session[:current_user_id] = user.id
       redirect_to menus_path
     else
-      flash[:error] = user.errors.full_messages
+      flash[:error] = user.errors.full_messages.join(", ")
       redirect_to new_user_path
+    end
+  end
+
+  def edit
+    unless current_user
+      redirect_to root_path
     end
   end
 
