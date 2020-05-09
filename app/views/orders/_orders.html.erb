@@ -10,7 +10,7 @@
 
         <% if order.user.is_clerk? || order.user.is_owner? %>
         <div class="Walk-image">
-          <%= Walk In Customer %>
+          Walk In Customer 
        </div>
         <% else %>
           <div class="User-name">
@@ -20,7 +20,7 @@
 
         <% if order.date %>
           <div class="Order-date">
-            <%= order.date.strftime("%d %B,%Y - %I:%M %p") %>
+            <%= order.ordered_at.strftime("%d %B,%Y - %I:%M %p") %>
           </div>
         <% end %>
       </div>
@@ -28,27 +28,27 @@
       <span class="Orderone-Status"
             <% if order.delivered_at %>
               style="color:blue;font-weight:bold"
-            <% elsif order.date %>
+            <% elsif order.ordered_at %>
               style="color:red;font-weight:bold"
             <% else %>
               style="color:green;font-weight:bold"
             <% end %> >
-        <%= order.order_status %>
+            <%= order.order_status %>
       </span>
       <div class="Order-section">
         <p class="Order-sub">Ratings</p>
         <div class="Order-ratings">
-        <%= render partial: "ratings", locals: { order: order, mark_as_delivered: mark_as_delivered } %>
+          <%= render partial: "ratings", locals: { order: order, mark_as_delivered: mark_as_delivered } %>
         </div>
       </div>
 
       <section class="Order-section" id="Order-details">
           <div class="Order-sub"> Billing</div>
          <div class="Order-calculation" >
-          <% order.all_menu_item_names.uniq.each do |menu_item| %>
+           <% order.all_menu_item_names.uniq.each do |menu_item| %>
                 <%= menu_item %> x <%= order.all_menu_item_names.count(menu_item).to_s %> =
                 Rs. <%= order.order_items.get_menu_item_price(menu_item) * order.all_menu_item_names.count(menu_item) %>
-          <% end %>
+           <% end %>
          </div>
       </section>
 

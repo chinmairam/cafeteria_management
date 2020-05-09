@@ -47,6 +47,10 @@ class Order < ApplicationRecord
     end
   end
 
+  def self.completed
+    where("status = ? ", "order_delivered")
+  end
+
   def order_status
     if status == "being_created"
       "Being Created"

@@ -1,9 +1,9 @@
 class MenusController < ApplicationController
   skip_before_action :verify_authenticity_token
-  
+
   def index
     @menus = Menu.order(:name)
-    @order = @current_user.orders.being_created
+    @order = current_user.orders.being_created
   end
 
   def show

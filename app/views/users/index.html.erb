@@ -8,7 +8,7 @@
     </div>
   <% end %>
   <section>
-    <table class="Personas">
+    <table class="Clerks">
       <%= render partial: "users", locals: { roles: nil, owner: @current_user, heading: "Owner" } %>
       <%= render partial: "users", locals: { roles: @clerks, owner: nil, heading: "Clerks" } %>
       <%= render partial: "users", locals: { roles: @customers, owner: nil, heading: "Customers" } %>
@@ -16,19 +16,20 @@
   </section>
   <div class="Add-Clerk">
     <h2 class="Signup-Header">Join a Clerk </h2>
-    <%= form_with url: clerk_path, class: "SignUp-Form" do |form| %>
+   <%= form_with url: clerk_path, class: "SignUp-Form" do |form| %>
     <div>
-    <%= form.text_field :name,
-                        placeholder: "Name", autofocus: true %>
+     <%= form.text_field :name,
+                         placeholder: "Name",
+                         autofocus: true %>
     </div>
     <br>
-    <%= form.email_field :email,
-                         placeholder: "Email" %>
+     <%= form.email_field :email,
+                          placeholder: "Email" %>
     <br>
-    <%= form.password_field :password,
-                            placeholder: "Password" %>
+     <%= form.password_field :password,
+                             placeholder: "Password" %>
     <br>
-    <%= form.submit "Join", data: { "disable-with": "Entering" }, class: "SignUp-Button" %>
-  <% end %>
-</div>
+    <%= form.submit "Join", data: { "disable-with": "Appointing" }, class: "SignUp-Button" %>
+   <% end %>
+  </div>
 </main>

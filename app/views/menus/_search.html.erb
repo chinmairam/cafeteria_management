@@ -1,14 +1,14 @@
 <% content_for :head do %>
-<div class="Search">
+ <div class="Search">
     <form>
       <input type="search" placeholder="Search for item" class="Search-box">
       <input type="submit" value="Search" class="Search-button">
     </form>
-  </div>
+ </div>
   <% if @current_user.is_owner? %>
     <div class="AddItem" id="Add-Item-form">
-    <p class="Add-heading">Add Items
-    </p>
+     <p class="Add-heading">Add Items
+     </p>
       <%= form_with(model: @menu, url: menu_items_url, method: "post", local: true) do |form| %>
         <div class="costum-select">
           <select name="id" onchange=show_box(this.value)>

@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   resources :menus, :menu_items, :orders, :order_items, :users
   get "/cart", to: "orders#cart", as: :cart
   get "/pending_orders", to: "orders#pending_orders", as: :pending_orders
-  get "/slaes_report", to: "orders#sale", as: :order_sale
-  get "search", to: "search#search", as: :search
+  get "/sale", to: "orders#sale", as: :sale
+  get "/search", to: "search#search", as: :search
   post "/clerk", to: "users#clerk", as: :clerk
-  post "/clerk/update", to: "users#clerk_update", as: :clerk_update
+  post "/clerk_update", to: "users#clerk_update", as: :clerk_update
 end

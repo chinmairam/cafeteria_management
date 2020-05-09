@@ -52,7 +52,7 @@
           <% if @current_user.is_owner? %>
             <p class="MenuItemDelete">
              <%= link_to edit_menu_item_path(id: menu_item.id) do %>
-               <%= link_to "edit1.png", class: "Delete" %>
+               <%= image_tag "edit1.png", class: "Delete" %>
              <% end %>
              <%= link_to menu_item, method: :delete do %>
               <% image_tag "remove.png" %>

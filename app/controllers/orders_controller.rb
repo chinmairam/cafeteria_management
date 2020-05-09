@@ -17,13 +17,12 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = current_user.orders.being_created
+    @order = current_user.orders.being_created.first
     if @order.order_items.empty?
       redirect_to(cart_path, alert: "Order should have atleast 1 fooditem")
     else
       @order.status = "order_confirmed"
       @order.address = params[:address]
-      @order.date = Time.now + 20000
       @order.ordered_at = DateTime.now
       @order.save!
       flash[:notice] = "Order recived! Soon your order will be delivered"
@@ -31,11 +30,20 @@ class OrdersController < ApplicationController
     end
   end
 
+  def sale
+    ensure_owner_logged_in
+    @user = User.all
+    @orders = Order.completed
+    @menus = Menu.all
+    @menu_items = MenuItem.all
+  end
+
   def update
     ensure_owner_or_clerk_logged_in
     @order = Order.find(params[:id])
-    @order.status = "Order_Delivered"
-    @order.delivered_at = Time.now + 20000
+    @order.status = "Order_delivered"
+    @order.delivered_at = Time.now + 19800
+    @order.date = Date.today
     @order.save!
     flash[:notice] = "#{@order.id} is marked as delivered!"
     redirect_to "/pending_orders"
