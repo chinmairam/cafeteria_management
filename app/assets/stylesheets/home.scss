@@ -52,7 +52,7 @@ body {
 }
 
 .Buttons-container:hover .navbarButtons {
-  display: inline-block
+  display: flex;
 }
 
 .navbarButton > a {

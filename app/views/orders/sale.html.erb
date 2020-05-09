@@ -4,16 +4,16 @@
   Total Menus : <%= @menus.count %>
  </h3>
  <h3 class="Sale-Menu">
-  Total Items : <%= @menus_items.count %>
+  Total Items : <%= @menu_items.count %>
  </h3>
  <h3 class="Sale-Menu">
   Total Orders : <%= @orders.count %>
  </h3>
  <h3 class="Sale-Menu">
-  Total Clerks : <%= @users.clerks.count %>
+  Total Clerks : <%= @user.clerks.count %>
  </h3>
  <h3 class="Sale-Menu">
-  Total Buyers : <%= @users.customers.count %>
+  Total Buyers : <%= @user.customers.count %>
  </h3>
 
  <% price = 0 %>
@@ -25,7 +25,7 @@
    <% end %>
  <% end %>
 
- <h2>Sales Offline :Rs. <%= price_offline %></h2>
- <h2>Sales Online :Rs. <%= (price - price_offline) %></h2>
- <h2>Sales Total :Rs. <%= price %></h2>
+ <h3>Sales Offline :Rs. <%= price_offline %></h3>
+ <h3>Sales Online :Rs. <%= (price - price_offline) %></h3>
+ <h3>Sales Total :Rs. <%= price %></h3>
 </div>
