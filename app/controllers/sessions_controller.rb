@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(password)
       session[:current_user_id] = user.id
       flash[:notice] = "You are signed in successfully"
-      redirect_to menus_path
+      redirect_to root_path
     elsif user
       flash[:alert] = "Incorrect Password"
       redirect_to new_session_path

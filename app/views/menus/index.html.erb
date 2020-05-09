@@ -8,8 +8,11 @@
   </div>
 <% end %>
 <div class="MenuItems">
- <% if @current_user.role == "owner" %>
-  <%= render partial: "menu" %>
- <% end %>
- <%= render partial: "search" %>
+ <%= render partial: "menu_items/menulist" %>
+ <div> 
+  <% if @current_user.role == "owner" %>
+   <%= render partial: "menu" %>
+   <%= render partial: "search" %>
+  <% end %>
+ </div>
 </div>
