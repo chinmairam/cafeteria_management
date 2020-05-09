@@ -34,6 +34,7 @@ body {
   align-items: left;
   margin-left:auto ;
   margin-top: 150px;
+  margin-right: 30px;
 }
 .navbarButton {
   display: flex;
@@ -48,6 +49,7 @@ body {
   margin-left: auto;
   margin-right: 40px;
   color: lightgreen;
+  padding-left: 20px;
 
 }
 
@@ -85,6 +87,7 @@ body {
 .Home-Top {
   font-family: sans-serif;
   padding: 8px;
+  margin-bottom: 20px;
   text-align: center;
   color: rgba(255, 68, 0, 0.904);
 }
@@ -103,7 +106,23 @@ body {
   border: 2px solid transparent;
 }
 
+.order-button:hover a {
+  background-color: white;
+  color: rgba(255,68,0,0.904);
+  border-color: rgba(255,68,0,0.904);
+}
+
 .navbar-logo {
   display: inline-flex;
   align-items: center;
+}
+
+.SearchItem {
+  display: inline-flex;
+  justify-content: cenetr;
+}
+
+.OrderOnline-head {
+  padding-left: 120px;
+  padding-bottom: 15px;
 }
