@@ -28,8 +28,14 @@ class MenuItemsController < ApplicationController
 
   def destroy
     ensure_owner_logged_in
-    MenuItem.find(params[:id]).destroy
-    OrderItem.destroy_wrong_items(params[:id])
+    menu_item = MenuItem.find(params[:id])
+    Order.under_process.destroy_invalid_items(menu_item.id)
+    menu = Menu.find(menu_item.menu_id)
+    if menu.menu_items.count == 1
+      menu.destroy
+    end
+    menu_item.destroy
+    flash[:alert] = "Item Deleted"
     redirect_to menus_path
   end
 
@@ -39,7 +45,7 @@ class MenuItemsController < ApplicationController
     menu_item.description = params[:description].capitalize
     menu_item.price = params[:price]
     if menu_item.save
-      OrderItem.destroy_wrong_items(params[:id])
+      order.being_created.destroy_wrong_items(params[:id])
       flash[:notice] = "Item updated successfully!"
       redirect_to menus_path
     else

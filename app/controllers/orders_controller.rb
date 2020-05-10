@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
 
   def pending_orders
     ensure_owner_or_clerk_logged_in
+    orders = Order.order(:id).pending_orders
   end
 
   def show

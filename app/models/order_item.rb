@@ -24,15 +24,6 @@ class OrderItem < ApplicationRecord
     "#{id} #{order_id} #{menu_item_id} #{menu_item_name} #{menu_item_price}"
   end
 
-  def self.destroy_wrong_items(id)
-    all.each do |order_item|
-      order = Order.find(order_item.order_id)
-      if order.status = "being_created" && order_item.menu_item_id == id
-        order_item.destroy
-      end
-    end
-  end
-
   def self.get_menu_item_price(menu_item_name)
     find_by(menu_item_name: menu_item_name).menu_item_price
   end

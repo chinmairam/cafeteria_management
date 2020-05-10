@@ -52,6 +52,16 @@ class Order < ApplicationRecord
     where("status = ? ", "order_delivered")
   end
 
+  def self.destroy_wrong_items(id)
+    all.each do |order_item|
+      order.order_items.all.each do |order_item|
+        if order_item.menu_item_id == id
+          order_item.destroy
+        end
+      end
+    end
+  end
+
   def order_status
     if status == "being_created"
       "Being Created"

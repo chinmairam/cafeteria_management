@@ -23,6 +23,7 @@ class MenusController < ApplicationController
     ensure_owner_logged_in
     menu = Menu.find(params[:id])
     menu.destroy
+    flash[:alert] = "Menu Deleted"
     redirect_to menus_path
   end
 end
