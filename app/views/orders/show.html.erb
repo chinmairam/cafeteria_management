@@ -1,0 +1,43 @@
+<div class="Invoice-division">
+  <h2 class="Invoice-Header">PK-PLAZA</h2>
+  <h2 class="Invoice-Header">INVOICE</h2>
+  <h2 class="InvoiceTitle">Invoice No: <%= @order.id %> </h2>
+  <div class="Invoice-div">
+    <div class="Detail-div">
+      <span class="Invoice-User">
+          <h3 class="Invoice-subheading">Buyer Details</h3>
+          <p class="Detail">User id : <%= @order.user.id %> </p>
+          <p class="Detail">Name : <%= @user.name %></p>
+          <p class="Detail">email : <%= @user.email %></p>
+          <% if @user.is_owner? || @user.is_clerk? %>
+            <p class="Detail">Walk in customer <%= image_tag "buyer.png" %></p>
+          <% else %>
+            <p class="Detail">Online customer </p>
+          <% end %>
+      </span>
+      <span class="Invoice-Order">
+          <h3 class="Invoice-subheading">Orders Details</h3>
+          <p class="Detail">Order Id : <%= @order.id %></p>
+          <p class="Detail">Address : <%= @order.address %></p>
+          <p class="Detail">Ordered time : <%= @order.ordered_at.strftime("%d %B,%Y - %I:%M %p") %></p>
+          <p class="Detail">Delivery time : <%= @order.delivered_at.strftime("%d %B,%Y - %I:%M %p") %></p>
+      </span>
+    </div>
+    <table class="Invoice-Table">
+      <h3><th colspan="4" class="Header-table">Items</th></h3>
+      <tr><th>ITEM-NAME</th><th>QUANTITY</th><th>ITEM-COST</th><th>SUBTOTAL</th></tr>
+      <% @order.all_menu_item_names.uniq.each do |menu_item| %>
+        <tr>
+          <td><%= menu_item %></td>
+          <td><%= @order.all_menu_item_names.count(menu_item).to_s %></td>
+          <td><%= @order.order_items.get_menu_item_price(menu_item) %></td>
+          <td><%= @order.order_items.get_menu_item_price(menu_item) * @order.all_menu_item_names.count(menu_item) %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="InvoiceFinal">
+     <div class="Invoice-message">Thank You</div>
+     <div class="Invoice-Total">Total : Rs.<%= @order.total_price %></div>
+  </div>
+</div>

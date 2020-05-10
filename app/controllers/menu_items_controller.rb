@@ -29,6 +29,7 @@ class MenuItemsController < ApplicationController
   def destroy
     ensure_owner_logged_in
     MenuItem.find(params[:id]).destroy
+    OrderItem.destroy_wrong_items(params[:id])
     redirect_to menus_path
   end
 
@@ -38,6 +39,7 @@ class MenuItemsController < ApplicationController
     menu_item.description = params[:description].capitalize
     menu_item.price = params[:price]
     if menu_item.save
+      OrderItem.destroy_wrong_items(params[:id])
       flash[:notice] = "Item updated successfully!"
       redirect_to menus_path
     else

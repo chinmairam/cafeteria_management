@@ -52,10 +52,23 @@
          </div>
       </section>
 
-      <div class ="Order-section">
-        <p class="Order-sub">Order price</p>
+      <div class="Order-section">
+        <p class="Order-sub">Order Price</p>
         <div class="Order-price">Rs.<%= order.total_price %></div>
       </div>
 
+      <div class="Order-section">
+        <div class="Order-Invoice">
+         <% if order.status == "order_delivered" %>
+           <%= image_tag "invoice.png" %>
+             <%= link_to "Invoice", order_path(id: order.id) %>
+         <% elsif order.user_id == @current_user.id %>
+           <%= image_tag "trash-can-outline.svg" %>
+           <%= link_to "Del", order_path(id: order.id), :method => :delete %>
+          <% else %>
+
+          <% end %>
+        </div>
+      </div>
   </div>
 <% end %>
