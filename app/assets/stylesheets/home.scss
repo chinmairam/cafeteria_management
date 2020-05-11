@@ -6,6 +6,24 @@ body {
   font-family: sans-serif;
 }
 
+footer {
+  bottom: 0;
+  background-color: #BCAAA4;
+  z-index: 0;
+  left: 0;
+  right: 0;
+  margin: 0 20px 0;
+  min-height: 10px;
+}
+
+.Page-Footer {
+  color: #3e2511;
+  margin: 3px 20px 0 20px;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  text-align: center;
+}
+
 .navbar {
   display: flex;
   max-width: 100%;
