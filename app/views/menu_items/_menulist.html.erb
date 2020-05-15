@@ -35,14 +35,20 @@
             <p class="OrderItem-add" >
              <% if @order %>
               <% if @order.order_items.get_order_item(menu_item.id).exists? %>
+               <p class="AddToCart">
                 <%= link_to "-", order_item_path(id: @order.order_item(menu_item.name).id),
                             { :method => :delete } %>
+               </p>
+               <p class="OrderedQuantity">
                 <%= @order.order_items.get_order_item(menu_item.id).count %>
+               </p>
                 <%= link_to "+", order_items_path(menu_item_id: menu_item.id),
                             { :method => :post } %>
               <% else %>
+               <p class="AddToCart">
                 <%= link_to "Add to cart", order_items_path(menu_item_id: menu_item.id),
                             { :method => :post } %>
+               </p>
               <% end %>
             <% else %>
               <%= link_to "Add to cart", order_items_path(menu_item_id: menu_item.id),
