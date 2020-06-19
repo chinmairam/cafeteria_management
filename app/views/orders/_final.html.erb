@@ -9,7 +9,7 @@
     <th>Orders</th>
   </tr>
   <% roles.each do |role| %>
-    <% if role.orders.finished.get_datewise_orders(@begin_date, @end_date).count != 0 %>
+    
       <tr>
         <td>
          <%= role.id %>
@@ -27,6 +27,5 @@
            <% end %>
         </td>
       </tr>
-    <% end %>
   <% end %>
 </table>

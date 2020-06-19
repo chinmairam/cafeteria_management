@@ -1,4 +1,6 @@
 class MenuItemsController < ApplicationController
+  before action :ensure_owner_logged_in, only: [:create, :destroy, :edit, :update]
+
   def index
   end
 

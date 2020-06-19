@@ -1,6 +1,4 @@
 class MenusController < ApplicationController
-  skip_before_action :verify_authenticity_token
-
   def index
     @menus = Menu.order(:name)
     @order = current_user.orders.being_created
@@ -21,8 +19,8 @@ class MenusController < ApplicationController
 
   def destroy
     ensure_owner_logged_in
-    menu = Menu.find(params[:id])
-    menu.destroy
+    @menu = Menu.find(params[:id])
+    @menu.destroy!
     flash[:alert] = "Menu Deleted"
     redirect_to menus_path
   end
