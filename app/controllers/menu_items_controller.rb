@@ -29,7 +29,6 @@ class MenuItemsController < ApplicationController
   def destroy
     ensure_owner_logged_in
     menu_item = MenuItem.find(params[:id])
-    Order.under_process.destroy_invalid_items(menu_item.id)
     menu = Menu.find(menu_item.menu_id)
     if menu.menu_items.count == 1
       menu.destroy
