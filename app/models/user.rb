@@ -16,6 +16,10 @@ class User < ApplicationRecord
     User.all.where("role = ?", "clerk")
   end
 
+  def self.owners
+    User.all.where("role = ?", "owner")
+  end
+
   def self.customers
     User.all.where("role = ?", "customer")
   end

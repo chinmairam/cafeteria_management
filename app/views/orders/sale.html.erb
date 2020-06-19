@@ -18,10 +18,12 @@
 
  <% price = 0 %>
  <% @orders.each { |order| price = price + order.total_price } %>
- <% price_offline = 0 %>
- <% @orders.all.each do |order| %>
-   <% if order.walkin_order? %>
-     <% price_offline = price_offline + order.total_price %>
-   <% end %>
- <% end %>
+  <div class = "sales_division">
+   <div class="sub-head">Date Wise Analysis </div>
+    <%= form_tag("/date_report", method: "get") do %>
+      <%= date_field_tag "begin_date", nil, class: "Date-field", required: true %>
+      <%= date_field_tag "end_date", nil, class: "Date-field", required: true %>
+      <div><%= submit_tag nil, class: "Submit-button", value: "Display Report" %></div>
+    <% end %>
+   </div>
 </div>

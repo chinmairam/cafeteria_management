@@ -63,6 +63,15 @@ class OrdersController < ApplicationController
     @all_orders = Order.order(id: :desc)
   end
 
+  def date_report
+    @begin_date = params[:begin_date]
+    @end_date = params[:end_date]
+    @users = User.all
+    @orders = Order.finished.get_datewise_orders(@begin_date, @end_date)
+    @menus = Menu.all
+    @menu_items = MenuItem.all
+  end
+
   def destroy
     order = Order.find(params[:id])
     if order.user_id == current_user.id

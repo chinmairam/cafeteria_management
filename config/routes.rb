@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "/cart", to: "orders#cart", as: :cart
   get "/pending_orders", to: "orders#pending_orders", as: :pending_orders
   get "/sale", to: "orders#sale", as: :sale
+  get "/date_report", to: "orders#date_report", as: :date_report
   get "/search", to: "search#search", as: :search
   post "/clerk", to: "users#clerk", as: :clerk
   post "/clerk_update", to: "users#clerk_update", as: :clerk_update

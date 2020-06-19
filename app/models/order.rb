@@ -15,6 +15,10 @@ class Order < ApplicationRecord
     where("status= ?", "order_confirmed")
   end
 
+  def self.finished
+    where("status=?", "order_completed")
+  end
+
   def self.being_created
     where("status= ?", "being_created").first
   end
@@ -60,6 +64,30 @@ class Order < ApplicationRecord
         end
       end
     end
+  end
+
+  def self.get_purchased_items
+    items = []
+    all.finished.each do |order|
+      items += order.all_menu_item_names
+    end
+    items
+  end
+
+  def self.final_sales(menu_item_name)
+    price = 0
+    all.finished.each do |order|
+      order.order_items.all.each do |order_item|
+        if order_item.menu_item_name == menu_item_name
+          price = price + order_item.menu_item_price
+        end
+      end
+    end
+    price
+  end
+
+  def self.get_datewise_orders(begin_date, end_date)
+    all.where("date >= ? and  date<= ?", begin_date, end_date)
   end
 
   def order_status
