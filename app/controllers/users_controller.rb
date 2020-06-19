@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def new
     if current_user
       flash[:notice] = "You are already signed up user"
-      redirect_to root_path
+      redirect_to menus_path
     else
       render "users/new"
     end
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     if user.save
       user.save!
       session[:current_user_id] = user.id
-      redirect_to root_path
+      redirect_to new_session_path
     else
       flash[:error] = user.errors.full_messages.join(", ")
       redirect_to new_user_path
