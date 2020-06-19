@@ -1,0 +1,32 @@
+<table class="Clerks">
+  <h3>
+    <th colspan="4" class="Header-table"><%= heading %></th>
+  </h3>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Total Orders</th>
+    <th>Orders</th>
+  </tr>
+  <% roles.each do |role| %>
+    <% if role.orders.finished.get_datewise_orders(@begin_date, @end_date).count != 0 %>
+      <tr>
+        <td>
+         <%= role.id %>
+        </td>
+        <td>
+         <%= role.name %>
+        </td>
+        <td>
+         <%= role.orders.finished.get_datewise_orders(@begin_date, @end_date).count %>
+        </td>
+
+        <td>
+           <% role.orders.finished.get_datewise_orders(@begin_date, @end_date).ids.each do |id| %>
+              <%= link_to id, "orders/#{id}" %>,
+           <% end %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

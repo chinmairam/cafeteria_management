@@ -1,0 +1,194 @@
+  .Orders {
+    max-width: 70%;
+    margin: 5px auto;
+  }
+  .Order-title{
+    text-align: center;
+  }
+  .Orderone{
+    max-width: 60%;
+    margin: 10px auto;
+    border: 2px solid grey;
+    padding: 20px;
+    font-family: sans-serif;
+    border-radius: 5px;
+    display: flex;
+  }
+  .Orderone > p{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    font-family: sans-serif;
+  }
+  .Price-total{
+    margin-left: auto;
+    padding: 5px;
+    font-family: sans-serif;
+  }
+  .Orderone-Status{
+    margin-left: auto;
+    padding: 5px;
+    font-family: sans-serif;
+    font-size: 15px;
+  }
+  
+  .Order-details{
+    border-top: 1px dotted grey;
+    padding: 10px;
+  
+  }
+  .Order-details ul{
+    margin: 0 auto;
+    width: 70%;
+  }
+  .Order-item{
+    display: flex;
+    align-items: center;
+  }
+  .Order-item > span{
+    font-size: 15px;
+    color: rgb(83, 81, 81);
+  }
+  
+  .Order-time{
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color:  rgb(83, 81, 81);
+  }
+  .Order-time > img{
+    padding: 3px;
+  }
+  .Rating > img{
+    padding: 3px;
+  }
+  .Rating-Stars > img{
+    padding: 3px;
+  }
+  .Rating-Stars > img:hover{
+    transform: scale(1.5);
+  }
+  @keyframes OrderHighlight{
+    0%{border: 2px solid darkred;}
+    99%{border: 2px solid darkred;}
+    100%{border: 1px solid grey;}
+  }
+  .Order-id {
+    font-size: 25px;
+    padding-top: 20px;
+  }
+  .User-name {
+    font-size: 20px;
+    padding-top: 20px;
+  }
+  .Order-date {
+    font-size: 20px;
+    padding-top: 20px;
+  }
+  .Order-ratings {
+    font-size: 20px;
+    padding-top: 20px;
+  }
+  
+  .Order-sub {
+    font-size: 22px;
+  }
+  
+  .Order-section {
+    margin: 0 auto;
+    align-items: center;
+    max-width: 400px;
+  }
+  
+  .Order-price {
+    font-size: 20px;
+    padding-top: 20px;
+  }
+  
+  .Order-calculation {
+  
+    font-size: 18px;
+    padding-top: 20px;
+  }
+
+  .Order-Invoice {
+    padding-top: 40px;
+  }
+
+  .Invoice-div {
+    text-align: center;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+  }
+
+  .Invoice-division {
+    text-align: center;
+    max-width: 1000px;
+    margin: 20px auto;
+    border: 1px solid black;
+    padding-top: 30px;
+    border-radius: 10px;
+  }
+  
+  .Invoice-subheading {
+    font-size: 30px;
+    margin-bottom: 5px;
+  }
+
+  .Detail {
+    padding: 5px;
+  }
+
+  .Detail-div {
+    display: flex;
+  }
+
+  .Invoice-User {
+    width: 370px;
+    text-align: left;
+    margin-top: 30px;
+  }
+
+  .Invoice-Order {
+    margin-left: 80px;
+    text-align: right;
+    margin-top: 30px;
+  }
+  .Invoice-Table {
+    margin-top: 30px;
+  }
+
+  .InvoiceFinal {
+    margin-top: 50px;
+    font-size: 30px;
+    padding: 30px;
+    background-color: hsl(180, 100%, 50%);
+    text-align: right;
+    display: flex;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .Invoice-Total {
+    margin-left: 480px;
+  }
+
+  .Invoice-Header {
+    margin-top: 10px;
+  }
+
+  .Invoice-Title {
+      font-size: 2vw;
+      font-weight: bold;
+      font-family: sans-serif;
+      text-align: center;
+      border-radius: 0.5vw;
+      max-width: max-content;
+      margin: auto;
+      padding: 0.5vw;
+      opacity: 80%;
+      color: rgb(68,13,13)
+  }

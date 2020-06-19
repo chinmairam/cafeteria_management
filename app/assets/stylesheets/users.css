@@ -1,0 +1,113 @@
+  .Users-Main{
+    max-width: 70%;
+    margin: 5px auto;
+  }
+  
+  table {
+    margin-top: 20px;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 8px;
+    
+  }
+  
+  td, th {
+    text-align: left;
+    padding: 8px;
+  }
+  th{
+    font-size: 21px;
+    font-weight: bold;
+    border-bottom:2px solid grey ;
+  }
+
+  td { 
+    font-size: 18px;
+    border-bottom: 1px dotted grey;
+  }
+
+  .Clerks {
+    margin-top: 50px;
+  }
+
+  .User-Data:hover{
+    background-color: rgb(226, 224, 224);
+  }
+  .User-Data > td{
+    padding: 10px;
+  }
+  .Table-Header{
+    text-align: center;
+    font-size: 26px;
+    background-color: #6f7bd9;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+  }
+  .User-Data >td a{
+    color: rgb(59, 59, 175);
+  }
+  .User-Data >td a:hover{
+    color: blue;
+  }
+  @keyframes User{
+    0%{border-top: 2px solid tomato;border-bottom: 2px solid tomato;}
+    99%{border-top: 2px solid tomato;border-bottom: 2px solid tomato;}
+    100%{border: 1px dotted grey;}
+  }
+
+  .Profile-Main {
+    max-width: 600px;
+    margin: 0 auto;
+    align-items: center;
+  }
+  .Profile-Image {
+    margin: 25px 0;
+    background-color: crimson;
+    color: white;
+    display: flex;
+    font-weight: bold;
+    border: 5px solid transparent;
+    text-align: center;
+  }
+
+  .Add-Clerk {
+    margin: 20px auto;
+    border: transparent;  
+    border-radius: 12px;
+    padding: 30px;
+    margin: 0 auto;
+    border: 1px solid black;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    max-width: 500px;
+  }
+  
+  .Details {
+    text-align: center;
+    margin-top: 21px;
+    font-size: 25px;
+  }
+  .Details-block {
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 6px;
+    border: 1px solid black;
+    -webkit-box-shadow: -1px 1px 5px 9px grey;
+    box-shadow: -1px 1px 5px 9px grey;
+  }
+  
+  .Welcome-mesg {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 20px;
+    color: green;
+  }
+
+  .Details-Edit {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 35px;
+  }

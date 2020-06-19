@@ -1,0 +1,33 @@
+<h3 class="Report-Heading">Sales Report Between <%= @begin_date %> and <%= @end_date %></h3>
+<div class="Report-page">
+    <div class="User-analysis">
+      <div class ="Sub-analysis"><%= render partial: "final", locals: { roles: @users.owners, heading: "Owner" } %></div>
+      <div class ="Sub-analysis"><%= render partial: "final", locals: { roles: @users.clerks, heading: "Clerks" } %></div>
+      <div class ="Sub-analysis"><%= render partial: "final", locals: { roles: @users.customers, heading: "Customers" } %></div>
+    </div>
+    <% count = 0 %>
+    <% price = 0 %>
+    <% @orders.each { |order| price = price + order.total_price } %>
+    <% price_offline = 0 %>
+    <% @orders.all.each do |order| %>
+        <% if order.walkin_order? %>
+          <% price_offline = price_offline + order.total_price %>
+          <% count = count + 1 %>
+        <% end %>
+    <% end %>
+    <div class ="Sales-head">Sold Items</div>
+    <div class="Itemwise-sales">
+      <% items = @orders.get_purchased_items %>
+      <% items.uniq.each do |menu_item| %>
+        <div class="Itemwise-analysis"> <%= menu_item %> x <%= items.count(menu_item) %> = <%= @orders.final_sales(menu_item) %></div>
+      <% end %>
+    </div>
+    <div class="Item-analysis">
+      <div class ="Report-detail">Online Orders : <%= @orders.count - count %></div>
+      <div class ="Report-detail">Offline Orders : <%= count %></div>
+      <div class ="Report-detail">Total Orders : <%= @orders.count %></div>
+      <h3 class = "Report-detail">Online sales : Rs.<%= (price - price_offline) %>
+      <h3 class = "Report-detail">Offline sales : Rs.<%= price_offline %></h3>
+      <h3 class = "Report-detail">Total sales : Rs.<%= price %></h3>
+    </div>
+</div>
