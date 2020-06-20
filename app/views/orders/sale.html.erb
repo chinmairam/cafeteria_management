@@ -16,7 +16,7 @@
  <% price = 0 %>
  <% @orders.each { |order| price = price + order.total_price } %>
   <div class = "sales_division">
-   <div class="sub-head">Date Wise Analysis </div>
+   <div class="sub-head">Date Wise Report </div>
     <%= form_tag("/date_report", method: "get") do %>
       <%= date_field_tag "begin_date", nil, class: "Date-field", required: true %>
       <%= date_field_tag "end_date", nil, class: "Date-field", required: true %>

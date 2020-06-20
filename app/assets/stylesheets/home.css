@@ -21,6 +21,11 @@ footer {
   text-align: center;
 }
 
+.Notice {
+  text-align: center;
+  color: hsl(0, 100%, 50%);
+}
+
 .navbar {
   display: flex;
   max-width: 100%;
