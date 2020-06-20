@@ -1,12 +1,4 @@
 <main class="Users-Main">
-  <% content_for :search do %>
-    <div class="SearchItem">
-      <%= form_with(url: search_path, method: "get", local: true) do |form| %>
-        <%= form.text_field :email, placeholder: "Enter user email" %>
-        <%= form.submit "Search User", placeholder: "Enter user email" %>
-      <% end %>
-    </div>
-  <% end %>
   <section>
     <table class="Clerks">
       <%= render partial: "users", locals: { roles: nil, owner: @current_user, heading: "Owner" } %>

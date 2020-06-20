@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
 
   def new
     if current_user
-      redirect_to(menus_path, notice: "You are alreday signed in user")
+      redirect_to(menus_path, notice: "Signed In")
     end
   end
 

@@ -1,10 +1,4 @@
 <% content_for :head do %>
-  <div class="Search">
-     <form>
-       <input type="search" placeholder="Search for item" class="Search-box">
-       <input type="submit" value="Search" class="Search-button">
-     </form>
-  </div>
    <% if @current_user.is_owner? %>
      <div class="AddItem" id="Add-Item-form">
       <p class="Add-heading">Add Items
@@ -23,7 +17,9 @@
          <%= form.number_field :price, placeholder: "Item price" %>
          <%= form.text_field :description, placeholder: "Description of item" %>
          <%= form.text_field :new_menu_name, placeholder: "Menu name" %>
-         <%= form.submit value = "Add" %>
+         <p class="ItemAdd-Button">
+          <%= form.submit value = "Add" %>
+         </p>
        <% end %>
      </div>
    <% end %>

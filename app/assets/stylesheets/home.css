@@ -141,10 +141,16 @@ footer {
 
 .SearchItem {
   display: inline-flex;
-  justify-content: cenetr;
+  justify-content: center;
+  align-items: center;
 }
 
 .OrderOnline-head {
   padding-left: 120px;
   padding-bottom: 15px;
+}
+
+.OnlineOrder {
+  margin-top: 10px;
+  margin-left: 50px;
 }

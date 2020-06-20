@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def new
     if current_user
-      flash[:notice] = "You are already signed up user"
+      flash[:notice] = "Signed In"
       redirect_to menus_path
     else
       render "users/new"
@@ -52,8 +52,8 @@ class UsersController < ApplicationController
     user = User.new(name: name.capitalize, email: email, role: "clerk", password: password)
     if user.save
       user.save!
-      session[:current_user_id] = user.id
       redirect_to request.referer
+      flash[:notice] = "Clerk Account Added"
     else
       flash[:error] = user.errors.full_messages
       redirect_to request.referer
