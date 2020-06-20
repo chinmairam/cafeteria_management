@@ -57,7 +57,7 @@ class Order < ApplicationRecord
   end
 
   def self.destroy_wrong_items(id)
-    all.each do |order_item|
+    all.each do |order|
       order.order_items.all.each do |order_item|
         if order_item.menu_item_id == id
           order_item.destroy
@@ -68,7 +68,7 @@ class Order < ApplicationRecord
 
   def self.get_purchased_items
     items = []
-    all.finished.each do |order|
+    all.delivered.each do |order|
       items += order.all_menu_item_names
     end
     items
@@ -76,7 +76,7 @@ class Order < ApplicationRecord
 
   def self.final_sales(menu_item_name)
     price = 0
-    all.finished.each do |order|
+    all.delivered.each do |order|
       order.order_items.all.each do |order_item|
         if order_item.menu_item_name == menu_item_name
           price = price + order_item.menu_item_price

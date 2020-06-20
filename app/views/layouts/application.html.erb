@@ -107,6 +107,13 @@
          </ul>
         </div>
        <% end %>
+       <div>
+        <% if flash.notice %>
+         <p>
+           <%= notice %>
+         </p>
+        <% end %>
+       </div>
   </div>
        <%= yield %>
        

@@ -1,12 +1,12 @@
 <h3 class="Report-Heading">Sales Report Between <%= @begin_date %> and <%= @end_date %></h3>
 <div class="Report-page">
     <div class="User-analysis">
-      <div class ="Sub-analysis"><%= render partial: "final", locals: { roles: @users.owners, heading: "Owner" } %></div>
+      <div class ="Sub-analysis"><%= render partial: "final", locals: { roles: @users.owners, heading: "Owners" } %></div>
       <div class ="Sub-analysis"><%= render partial: "final", locals: { roles: @users.clerks, heading: "Clerks" } %></div>
       <div class ="Sub-analysis"><%= render partial: "final", locals: { roles: @users.customers, heading: "Customers" } %></div>
     </div>
-    <% count = 0 %>
     <% price = 0 %>
+    <% count = 0 %>
     <% @orders.each { |order| price = price + order.total_price } %>
     <% price_offline = 0 %>
     <% @orders.all.each do |order| %>
@@ -15,7 +15,7 @@
           <% count = count + 1 %>
         <% end %>
     <% end %>
-    <div class ="Sales-head">Sold Items</div>
+    <div class ="Sales-head">Vended Items</div>
     <div class="Itemwise-sales">
       <% items = @orders.get_purchased_items %>
       <% items.uniq.each do |menu_item| %>

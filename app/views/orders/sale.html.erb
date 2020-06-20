@@ -7,13 +7,10 @@
   Total Items : <%= @menu_items.count %>
  </h3>
  <h3 class="Sale-Menu">
-  Total Orders : <%= @orders.count %>
+  Total Clerks : <%= @users.clerks.count %>
  </h3>
  <h3 class="Sale-Menu">
-  Total Clerks : <%= @user.clerks.count %>
- </h3>
- <h3 class="Sale-Menu">
-  Total Buyers : <%= @user.customers.count %>
+  Total Buyers : <%= @users.customers.count %>
  </h3>
 
  <% price = 0 %>

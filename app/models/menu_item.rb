@@ -4,7 +4,7 @@ class MenuItem < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
 
-  def pleasant_string
+  def to_a_string
     "#{name} #{description} #{menu.name} #{price}"
   end
 end

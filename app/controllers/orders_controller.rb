@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   def index
-    orders = current_user.orders.order(:id)
+    @orders = @current_user.orders.order(:id)
   end
 
   def pending_orders
@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    order = current_user.orders.being_created
+    order = current_user.orders.being_created.first
     if order.order_items.empty?
       redirect_to(cart_path, alert: "Order should have atleast 1 fooditem")
     else
@@ -37,7 +37,7 @@ class OrdersController < ApplicationController
 
   def sale
     ensure_owner_logged_in
-    @user = User.all
+    @users = User.all
     @orders = Order.completed
     @menus = Menu.all
     @menu_items = MenuItem.all
@@ -55,7 +55,7 @@ class OrdersController < ApplicationController
   end
 
   def cart
-    @order = current_user.orders.being_created
+    @order = current_user.orders.being_created.first
   end
 
   def all_orders
@@ -67,7 +67,7 @@ class OrdersController < ApplicationController
     @begin_date = params[:begin_date]
     @end_date = params[:end_date]
     @users = User.all
-    @orders = Order.finished.get_datewise_orders(@begin_date, @end_date)
+    @orders = Order.delivered.get_datewise_orders(@begin_date, @end_date)
     @menus = Menu.all
     @menu_items = MenuItem.all
   end

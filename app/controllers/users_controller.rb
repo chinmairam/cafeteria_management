@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
   def index
     ensure_owner_logged_in
+    @users = User.all
     @clerks = User.clerks.order(:id)
     @customers = User.customers.order(:id)
   end

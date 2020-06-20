@@ -22,7 +22,7 @@
       <td><%= role.id %></td><td><%= role.name %></td><td><%= role.email %></td>
       <td>
          <% role.orders.delivered.ids.each do |id| %>
-           <%= link_to id, "orders/##{id}" %>,
+           <%= link_to id, "orders/#{id}" %>,
          <% end %>
       </td>
       <% if heading == "Clerks" %>
