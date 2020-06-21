@@ -1,5 +1,5 @@
   .Orders {
-    max-width: 85%;
+    max-width: 95%;
     margin: 5px auto;
   }
   .Order-title{
@@ -85,7 +85,7 @@
     padding-top: 20px;
   }
   .Order-date {
-    font-size: 20px;
+    font-size: 18px;
     padding-top: 20px;
   }
   .Order-ratings {
@@ -123,12 +123,13 @@
   .Order-price {
     font-size: 20px;
     padding-top: 20px;
+    text-align-last: center;
   }
   
   .Order-calculation {
     font-size: 17px;
     padding-top: 20px;
-    max-width: 400px;
+    max-width: 250px;
   }
 
   .Order-Invoice {
