@@ -2,7 +2,7 @@
     font-family: sans-serif;
   }
 
-  .main-welcomeBody{
+  .main-welcomeBody { 
     display: flex;
     font-family:  sans-serif;
   }
@@ -31,20 +31,20 @@
     font-size: 15px;
     }
     
-  .Header span a{
+  .Header span a {
     padding:6px;
     text-decoration: none;
     border: 2px solid white;
     border-radius: 5px;
     color: white;
-  
   }
-  .Header span a:hover{
+
+  .Header span a:hover {
     background-color: white;
     color:rgb(94, 67, 136) ;
   }
   
-  .loginBox{
+  .loginBox {
     max-width: 500px;
     margin: 20px auto;
     border: 3px solid transparent;
@@ -52,13 +52,13 @@
     box-shadow: 2px 2px 5px gray;
   }
   
-  .login-signUp{
+  .login-signUp {
     margin: 25px 0;
     text-align: center;
     font-size: 20px;
-  
   }
-  .SignUp{
+
+  .SignUp {
     text-decoration: none;
     color: rgb(199, 26, 26);
   }
@@ -74,19 +74,18 @@
     border-radius: 10px;
   }
   
-  .login-form input[type=checkbox]{
-  
+  .login-form input[type=checkbox] {
     display: block;
     margin-left: 50px;
   }
   
-  .login-showPassword{
+  .login-showPassword {
     display: flex;
     align-items: center;
     margin-left: 50px;
   }
   
-  .Login-Button{
+  .Login-Button {
     text-decoration: none;
     display: block;
     margin: 10px auto;
@@ -101,7 +100,7 @@
     padding: 5px;
   }
   
-  .Footer{
+  .Footer {
     max-width: 98%;
     margin: 0 auto;
     padding: 10px;

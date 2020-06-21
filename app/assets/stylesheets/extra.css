@@ -1,31 +1,31 @@
-  .OnlineOrder > img{
+  .OnlineOrder > img {
     padding: 8px;
     margin: 5px;
   }
   
-  .Item-Search{
+  .Item-Search {
     max-width: 100%;
     margin: 0px auto;
     padding: 8px;
     text-align: center;
   }
   
-  .AddItem{
+  .AddItem {
     max-width: 300px;
     margin: 0 auto;
     margin-top: 100px;
     margin-left: 400px;
   }
 
-  .AddItem > form{
+  .AddItem > form {
     margin: 10px auto;
   }
 
-  .AddItem > form > input{
+  .AddItem > form > input {
     margin: 10px auto;
   }
 
-  .AddItem > form input{
+  .AddItem > form input {
     background-color: white;
     border-radius: 5px;
     border: 0px;
@@ -33,7 +33,7 @@
     padding: 5px;
   }
 
-  .AddItem > form input[type="submit"]{
+  .AddItem > form input[type="submit"] {
     background-color: violet;
     color: white;
     margin-top: 20px;
@@ -89,7 +89,7 @@
     margin: 6px;
   }
   
-  .Add-heading{
+  .Add-heading {
     margin-left: 30px;
     font-size: 30px;
     font-weight: 400;

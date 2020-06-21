@@ -2,10 +2,12 @@
     max-width: 95%;
     margin: 5px auto;
   }
-  .Order-title{
+
+  .Order-title {
     text-align: center;
   }
-  .Orderone{
+
+  .Orderone {
     max-width: 70%;
     margin: 10px auto;
     border: 2px solid grey;
@@ -14,18 +16,21 @@
     border-radius: 5px;
     display: flex;
   }
-  .Orderone > p{
+
+  .Orderone > p {
     display: flex;
     align-items: center;
     padding: 5px;
     font-family: sans-serif;
   }
-  .Price-total{
+
+  .Price-total {
     margin-left: auto;
     padding: 5px;
     font-family: sans-serif;
   }
-  .Orderone-Status{
+
+  .Orderone-Status {
     margin-left: auto;
     padding: 5px;
     font-family: sans-serif;
@@ -34,60 +39,78 @@
     align-items: center;
   }
   
-  .Order-details{
+  .Order-details {
     border-top: 1px dotted grey;
     padding: 10px;
   
   }
-  .Order-details ul{
+
+  .Order-details ul {
     margin: 0 auto;
     width: 70%;
   }
-  .Order-item{
+
+  .Order-item {
     display: flex;
     align-items: center;
   }
-  .Order-item > span{
+
+  .Order-item > span {
     font-size: 15px;
     color: rgb(83, 81, 81);
   }
   
-  .Order-time{
+  .Order-time {
     display: flex;
     align-items: center;
     font-size: 15px;
     color:  rgb(83, 81, 81);
   }
-  .Order-time > img{
+
+  .Order-time > img {
     padding: 3px;
   }
-  .Rating > img{
+
+  .Rating > img {
     padding: 3px;
   }
-  .Rating-Stars > img{
+
+  .Rating-Stars > img {
     padding: 3px;
   }
-  .Rating-Stars > img:hover{
+
+  .Rating-Stars > img:hover {
     transform: scale(1.5);
   }
-  @keyframes OrderHighlight{
-    0%{border: 2px solid darkred;}
-    99%{border: 2px solid darkred;}
-    100%{border: 1px solid grey;}
+
+  @keyframes OrderHighlight {
+    0% {
+      border: 2px solid darkred;
+    }
+    99% {
+      border: 2px solid darkred;
+    }
+    100% {
+      border: 1px solid grey;
+    }
   }
+
   .Order-id {
     font-size: 20px;
     text-align-last: center;
     padding-top: 20px;
   }
+
   .User-name {
     font-size: 20px;
     padding-top: 20px;
   }
+
   .Order-date {
     font-size: 18px;
     padding-top: 20px;
   }
+  
   .Order-ratings {
     font-size: 20px;
     padding-top: 20px;

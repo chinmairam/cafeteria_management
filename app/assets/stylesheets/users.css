@@ -1,4 +1,4 @@
-  .Users-Main{
+  .Users-Main { 
     max-width: 70%;
     margin: 5px auto;
   }
@@ -9,14 +9,14 @@
     border-collapse: collapse;
     width: 100%;
     border-radius: 8px;
-    
   }
   
   td, th {
     text-align: left;
     padding: 8px;
   }
-  th{
+
+  th {
     font-size: 21px;
     font-weight: bold;
     border-bottom:2px solid grey ;
@@ -31,13 +31,15 @@
     margin-top: 50px;
   }
 
-  .User-Data:hover{
+  .User-Data:hover {
     background-color: rgb(226, 224, 224);
   }
-  .User-Data > td{
+
+  .User-Data > td {
     padding: 10px;
   }
-  .Table-Header{
+
+  .Table-Header {
     text-align: center;
     font-size: 26px;
     background-color: #6f7bd9;
@@ -45,13 +47,16 @@
     font-weight: bold;
     border-radius: 8px 8px 0 0;
   }
-  .User-Data >td a{
+
+  .User-Data >td a {
     color: rgb(59, 59, 175);
   }
-  .User-Data >td a:hover{
+
+  .User-Data >td a:hover {
     color: blue;
   }
-  @keyframes User{
+
+  @keyframes User {
     0%{border-top: 2px solid tomato;border-bottom: 2px solid tomato;}
     99%{border-top: 2px solid tomato;border-bottom: 2px solid tomato;}
     100%{border: 1px dotted grey;}
@@ -62,6 +67,7 @@
     margin: 0 auto;
     align-items: center;
   }
+
   .Profile-Image {
     margin: 25px 0;
     background-color: crimson;
@@ -90,6 +96,7 @@
     margin-top: 21px;
     font-size: 25px;
   }
+  
   .Details-block {
     padding: 20px;
     margin-top: 30px;

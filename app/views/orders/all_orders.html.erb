@@ -1,5 +1,4 @@
 <div class="Orders">
-  
   <h3 class="Orders-title">All Orders</h3>
   <%= render partial: "orders", locals: { orders: Order.order(id: :desc).delivered, mark_as_delivered: false } %>
 </div>

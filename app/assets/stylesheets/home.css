@@ -57,6 +57,7 @@ footer {
   margin-top: 150px;
   margin-right: 30px;
 }
+
 .navbarButton {
   display: flex;
   align-items: center;
@@ -86,9 +87,11 @@ footer {
   text-align: center;
   padding: 5px;
 }
+
 .navbarButton > a:hover {
   color: crimson;
 }
+
 .alert,#error_string {
   font-family: sans-serif;
   max-width: 50%;
@@ -98,13 +101,16 @@ footer {
   color: red;
   font-size: 20px;
 }
+
 #error_string h2 {
   font-size: 21px;
   font-weight: bold;
 }
+
 .error-msg {
   text-align: left;
 }
+
 .Home-Top {
   font-family: sans-serif;
   font-size: 30px;
@@ -113,10 +119,12 @@ footer {
   text-align: center;
   color: rgba(255, 68, 0, 0.904);
 }
+
 .order-button {
   margin: 5px auto;
   text-align: center;
 }
+
 .order-button > a {
   font-size: 26px;
   font-family: sans-serif;

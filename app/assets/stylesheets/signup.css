@@ -1,4 +1,4 @@
-  .SignUpMain{
+  .SignUpMain {
     max-width: 500px;
     margin: 20px auto;
     border: transparent;
@@ -9,7 +9,7 @@
     text-align: center;
   }
   
-  .Login{ 
+  .Login { 
     margin: 25px 0;
     text-align: center;
     font-size: 20px;
@@ -31,7 +31,6 @@
     text-align: center;
     border: 2px solid green;
     border-radius: 10px;
-  
   }
   
   .Signup-Header {
@@ -70,11 +69,11 @@
     text-align: center;
     }
     
-   .Change-Button {
-      margin-top: 30px;
-      padding: 10px;
-      background-color: crimson;
-      color: white;
-      border-radius: 8px;
-      font-size: 25px;
-   }
+  .Change-Button {
+    margin-top: 30px;
+    padding: 10px;
+    background-color: crimson;
+    color: white;
+    border-radius: 8px;
+    font-size: 25px;
+  }

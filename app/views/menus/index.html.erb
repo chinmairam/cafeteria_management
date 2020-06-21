@@ -7,8 +7,8 @@
     </h3>
   </div>
 <% end %>
-<div class="MenuItems">
- <%= render partial: "menu_items/menulist" %>
+ <div class="MenuItems">
+  <%= render partial: "menu_items/menulist" %>
  <div> 
   <% if @current_user.role == "owner" %>
    <%= render partial: "menu" %>

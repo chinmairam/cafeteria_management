@@ -1,17 +1,20 @@
-  .WalkIn{
+  .WalkIn {
     max-width: 90%;
     margin: 5px auto;
   }
-  .WalkIn > h3{
+
+  .WalkIn > h3 {
     text-align: center;
     color: rgba(94, 121, 185, 0.91);
   }
-  .MenuItems{
+
+  .MenuItems {
     max-width: 100%;
     margin: 0 auto;
     font-family: sans-serif;
   }
-  .Cafeteria-Menu{
+
+  .Cafeteria-Menu {
     width: 25%;
     margin: 5px;
     border-right: 2px dotted rgba(197, 194, 194, 0.966);
@@ -19,7 +22,7 @@
     margin-top: 50px;
   }
 
-  .MenuName{
+  .MenuName {
     margin: 5px;
     padding: 5px;
     font-weight: bold;
@@ -29,7 +32,7 @@
     color: crimson;
   }
 
-  h3.MenuName:target{
+  h3.MenuName:target {
     animation: menuHighlight 15s 1;
   }
 
@@ -47,6 +50,7 @@
     display: block;
     font-size: 20px;
   }
+
   .MenuItem {
     height: 65px;
     margin: 5px;
@@ -56,6 +60,7 @@
     align-items: center;
     font-family: sans-serif;
   }
+
   .MenuItems {
     width: 100%;
     margin-right: 100px;
@@ -64,46 +69,48 @@
   }
   
 
-  .MenuItem > p{
+  .MenuItem > p {
     padding: 5px;
   }
 
-  .MenuItem:hover{
+  .MenuItem:hover {
     border-radius: 10px;
   }
   
-   .Update-item{
+   .Update-item {
      margin-right: 20px;
      text-align: center;
      margin-bottom: 200px;
      display: flex;
     }
   
-    .OrderItem-add{
+    .OrderItem-add {
      background-color: white;
      border-radius: 4px;
      padding: 8px;
     }
   
-   .MenuItem-details{
+   .MenuItem-details {
      display: block;
      padding: 2px;
      margin: 5px;
      font-size: 19px;
    }
-   .MenuItem-price{
+
+   .MenuItem-price {
      width: 300px;
      text-align: center;
      font-size: 25px;
      display: block;
    }
-   .OrderItem-add > a{
+
+   .OrderItem-add > a {
     color: black;
     width: 20px;
     padding: 5px;
    }
 
-   @keyframes MenuHighlight{
+   @keyframes MenuHighlight {
     0%{background-color: #a13cf9;color: white;}
     99%{background-color: #a13cf9;color: white;}
     100%{background-color: white;color: black;}
@@ -113,11 +120,13 @@
     background-color: white;
     display: block;
   }
-  .MenuItem-delete{
+
+  .MenuItem-delete {
     display: none;
     visibility: hidden;
     margin-left: 30px;
   }
+
   .MenuItem-delete:hover {
     background-color: lightskyblue;
     visibility: visible;
@@ -135,7 +144,7 @@
     display: inline-block;
   }
  
-  .MenuItem-description{
+  .MenuItem-description {
     font-size: 22px;
     padding: 5px;
     width: 300px;
@@ -143,7 +152,7 @@
     display: block;
   }
 
-  .MenuItem-rating{
+  .MenuItem-rating {
     padding: 3px;
     font-size: 25px;
     width: 300px;

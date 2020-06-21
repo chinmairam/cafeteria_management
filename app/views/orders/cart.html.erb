@@ -28,7 +28,7 @@
               </div>
             </li>
           <% end %>
-          </div>
+        </div>
         </ul>
         <p class="Cart-total-price" >
           <div class="total-price"> Total Price : Rs. <%= @order.total_price %></div>
@@ -38,7 +38,7 @@
           <div>
            <%= text_area_tag "address", nil, rows: 5, cols: 30, class: "Cart-Address" %>
           </div>
-          <%= form.submit "Leave", class: "cart-checkout" %>
+          <%= form.submit "Place", class: "cart-checkout" %>
         <% end %>
       </div>
     <% end %>

@@ -11,7 +11,7 @@
         <% if order.user.is_clerk? || order.user.is_owner? %>
         <div class="Walk-image">
           Walk In Customer 
-       </div>
+        </div>
         <% else %>
           <div class="User-name">
             <%= order.user.name.capitalize %>
@@ -38,6 +38,7 @@
              <%= order.order_status %>
             </div>
       </span>
+      
       <div class="Order-section">
         <p class="Order-sub">Ratings</p>
         <div class="Order-ratings">
