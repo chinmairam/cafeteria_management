@@ -31,8 +31,7 @@
           </div>
         </ul>
         <p class="Cart-total-price" >
-          <div>Total Price :</div>
-          <div class="total-price"><%= @order.total_price %></div>
+          <div class="total-price"> Total Price : Rs. <%= @order.total_price %></div>
         </p>
         <%= form_with(model: @order, url: orders_path, method: "post", local: true) do |form| %>
           <h2 class="Address-Header">Address</h2>

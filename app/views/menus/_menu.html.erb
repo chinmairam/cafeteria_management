@@ -1,7 +1,7 @@
 <div class="Cafeteria-Menu">
   <ul>
     <% @menus.each do |menu| %>
-      <li class="Menu">
+      <li>
         <% if @current_user.is_owner? %>
           <div class="MenuItem-delete">
             <%= link_to menu, method: :delete do %>

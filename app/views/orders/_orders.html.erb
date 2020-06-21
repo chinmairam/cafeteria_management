@@ -33,7 +33,10 @@
             <% else %>
               style="color:green;font-weight:bold"
             <% end %> >
-            <%= order.order_status %>
+            <p class="Status-sub">Status</p>
+            <div class="Status-main">
+             <%= order.order_status %>
+            </div>
       </span>
       <div class="Order-section">
         <p class="Order-sub">Ratings</p>

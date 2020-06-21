@@ -33,19 +33,6 @@
     animation: menuHighlight 15s 1;
   }
 
-  .Menu{
-    padding: 12px;
-    text-align: right;
-    font-size: 25px;
-    display: flex;
-    width: 300px;
-    align-items: center;
-  }
-
-  .Menu:hover {
-    background-color: white;
-  }
-
   .MenuList-Header {
     font-size: 30px;
     font-weight: 300px;
