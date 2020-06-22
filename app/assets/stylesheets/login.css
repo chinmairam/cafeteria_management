@@ -98,8 +98,15 @@
     border-radius: 10px;
     font-size: 20px;
     padding: 5px;
+    transition: 0.5s;
+    overflow: hidden;
+    cursor: pointer;
   }
-  
+
+  .Login-Button:hover {
+    background: #a41ee9;
+  }
+
   .Footer {
     max-width: 98%;
     margin: 0 auto;

@@ -32,6 +32,7 @@ footer {
   height: 400px;
   margin: 0 auto;
 }
+
 .navbarHeader {
   margin: 5px;
   padding: 5px;
@@ -42,9 +43,11 @@ footer {
   align-items: center;
   color: red;
 }
+
 .navbarHeader img {
   padding: 5px;
 }
+
 .navbarButtons {
   align-items: left;
   margin-left:auto ;
@@ -89,6 +92,7 @@ footer {
 }
 
 .navbarButton > a:hover {
+  border-bottom: 1px solid #228B22;
   color: crimson;
 }
 
@@ -98,17 +102,15 @@ footer {
   margin: 0 auto;
   padding: 10px;
   text-align: center;
-  color: red;
+  color: darkred;
   font-size: 20px;
 }
 
 #error_string h2 {
-  font-size: 21px;
+  font-size: 16px;
   font-weight: bold;
-}
-
-.error-msg {
-  text-align: left;
+  display: flex;
+  margin-bottom: 20px;
 }
 
 .Home-Top {

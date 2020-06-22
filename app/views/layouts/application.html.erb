@@ -96,16 +96,9 @@
         <p class="alert"><%= alert %></p>
        <% end %>
        <% if flash[:error] %>
-        <div id="error_string">
-         <h2>
-           <%= pluralize(flash[:error].count, "error") %> Please try again
-         </h2>
-         <ul>
-           <% flash[:error].each_with_index do |msg, index| %>
-             <li class="error-msg"><%= "#{index + 1}.#{msg}" %></li>
-           <% end %>
-         </ul>
-        </div>
+         <div id="error_string">
+           <h2><%= flash[:error] %></h2>
+         </div>
        <% end %>
        <div class="Notice">
         <% if flash.notice %>
