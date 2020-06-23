@@ -19,7 +19,6 @@
   .Login-Page {
     color: rgb(199, 26, 26);
     text-decoration: none;
-
   }
   
   .SignUp-Form input[type="text"] ,input[type="password"],.Item-pricechange ,#user_name {
@@ -53,6 +52,11 @@
     transition: 0.5s;
     overflow: hidden;
     cursor: pointer;
+  }
+
+  .SignUp-Button:hover {
+    background-color: #B565A7;
+    opacity: 0.8;
   }
 
   .Change {

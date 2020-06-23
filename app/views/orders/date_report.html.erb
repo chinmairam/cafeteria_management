@@ -15,19 +15,22 @@
           <% count = count + 1 %>
         <% end %>
     <% end %>
-    <div class ="Sales-head">Vended Items</div>
-    <div class="Itemwise-sales">
-      <% items = @orders.get_purchased_items %>
-      <% items.uniq.each do |menu_item| %>
+
+    <div class="Sales-detail">
+     <div class ="Sales-Title">Vended Items</div>
+     <div class="Itemwise-sales">
+       <% items = @orders.get_purchased_items %>
+       <% items.uniq.each do |menu_item| %>
         <div class="Itemwise-analysis"> <%= menu_item %> x <%= items.count(menu_item) %> = <%= @orders.final_sales(menu_item) %></div>
-      <% end %>
-    </div>
-    <div class="Item-analysis">
-      <div class ="Report-detail">Online Orders : <%= @orders.count - count %></div>
-      <div class ="Report-detail">Offline Orders : <%= count %></div>
-      <div class ="Report-detail">Total Orders : <%= @orders.count %></div>
-      <h3 class = "Report-detail">Online sales : Rs.<%= (price - price_offline) %>
-      <h3 class = "Report-detail">Offline sales : Rs.<%= price_offline %></h3>
-      <h3 class = "Report-detail">Total sales : Rs.<%= price %></h3>
+       <% end %>
+     </div>
+     <div class="Item-analysis">
+       <div class ="Report-info">Online Orders : <%= @orders.count - count %></div>
+       <div class ="Report-info">Offline Orders : <%= count %></div>
+       <div class ="Report-Total-info">Total Orders : <%= @orders.count %></div>
+       <h3 class = "Report-info">Online sales : Rs.<%= (price - price_offline) %>
+       <h3 class = "Report-info">Offline sales : Rs.<%= price_offline %></h3>
+       <h3 class = "Report-Total-info">Total sales : Rs.<%= price %></h3>
+     </div>
     </div>
 </div>

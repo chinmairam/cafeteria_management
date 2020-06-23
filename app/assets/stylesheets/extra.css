@@ -67,6 +67,31 @@
     width: 315px;
   }
 
+  .Sales-detail {
+    margin: auto;
+    width: max-content;
+  }
+
+  .Sales-Title {
+    font-size: xx-large;
+    margin: 7px;
+    font-weight: bold;
+  }
+
+  .Report-info {
+    margin-left: 10px;
+    margin: 7px;
+    font-size: 20px;
+  }
+
+  .Report-Total-info {
+    font-size: x-large;
+    margin-left: 10px;
+    margin: 7px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
   .Sales-Main {
     text-align: center;
     color: greenyellow;
@@ -87,6 +112,19 @@
   .Sale-Menu {
     font-size: 22px;
     margin: 6px;
+  }
+
+  .SalesDivision {
+    margin-bottom: 20px;
+  }
+
+  .Sub-head {
+    margin: 10px;
+    color: #9B2335;
+  }
+
+  .Submit-button {
+    margin: 10px;
   }
   
   .Add-heading {
