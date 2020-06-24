@@ -44,7 +44,6 @@ class MenuItemsController < ApplicationController
     menu_item.description = params[:description].capitalize
     menu_item.price = params[:price]
     if menu_item.save
-      order.being_created.destroy_wrong_items(params[:id])
       flash[:notice] = "Item updated successfully!"
       redirect_to menus_path
     else

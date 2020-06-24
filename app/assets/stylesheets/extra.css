@@ -33,6 +33,10 @@
     padding: 5px;
   }
 
+  .AddItem > form input:hover {
+    color: #F96714;
+  }
+
   .AddItem > form input[type="submit"] {
     background-color: violet;
     color: white;
@@ -41,6 +45,10 @@
     font-size: 22px;
   }
   
+  .AddItem > form input[type="submit"]:hover {
+    background-color: #FE840E;
+  }
+
   .Search-button {
     background-color: crimson;
     padding: 10px;
@@ -94,8 +102,8 @@
 
   .Sales-Main {
     text-align: center;
-    color: greenyellow;
-    margin-bottom: 60px;
+    color: #FF6F61;
+    margin-bottom: 20px;
   }
 
   .Sales-Report {
@@ -125,6 +133,10 @@
 
   .Submit-button {
     margin: 10px;
+  }
+
+  .Submit-button:hover {
+    color: #E47A2E;
   }
   
   .Add-heading {
