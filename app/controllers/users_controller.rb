@@ -66,6 +66,7 @@ class UsersController < ApplicationController
     user = User.find(id)
     if user.is_clerk?
       user.destroy
+      flash[:notice] = "Clerk Account deleted"
     else
       flash[:alert] = "Role can't be changed"
     end

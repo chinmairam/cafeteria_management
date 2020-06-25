@@ -1,29 +1,25 @@
 <div class="Profile-Main">
-<div class="Profile-Image">
+ <div class="Profile-Image">
   <%= image_tag "user.png" %>
-</div>
-<div class="Welcome-mesg">
+ </div>
+ <div class="Welcome-mesg">
    Welcome  <%= @current_user.name %>
-</div>
-<div class="Details-Block">
-<div class="Details">
-   Id : <%= @current_user.id %>
-</div>
-<div class="Details">
+ </div>
+ <div class="Details-Block">
+  <div class="Details">
+   User Id : <%= @current_user.id %>
+  </div>
+  <div class="Details">
    Name : <%= @current_user.name %>
-</div>
-<div class="Details">
+  </div>
+  <div class="Details">
    Email : <%= @current_user.email %>
-</div>
-<div class="Details">
-   Your orders : <%= @current_user.orders.count %>
-</div>
-<div class="Details">
-   Your Role : <%= @current_user.role %>
-</div>
-</div>
-<div class="Details-Edit">
-   <%= image_tag "edit1.png" %>
-   <%= link_to "Edit Profile", edit_user_path(id: @current_user.id) %>
-</div>
+  </div>
+  <div class="Details">
+   Orders : <%= @current_user.orders.count %>
+  </div>
+  <div class="Details">
+   Role : <%= @current_user.role %>
+  </div>
+ </div>
 </div>
