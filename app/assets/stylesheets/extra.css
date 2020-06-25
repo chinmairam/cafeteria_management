@@ -46,7 +46,7 @@
   }
   
   .AddItem > form input[type="submit"]:hover {
-    background-color: #FE840E;
+    background-color: #FF1493;
   }
 
   .Search-button {
@@ -154,4 +154,47 @@
 
   .ItemAdd-Button {
     margin-left: 130px;
+  }
+
+  .EditPage {
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .EditPage-header {
+    font-size: xx-large;
+    font-weight: bold;
+    margin: 10px;
+    text-align: center;
+  }
+
+  .Update-button {
+    color: #ffffff;
+    background: #db7093;
+    padding: 5px;
+    border-radius: 5px;
+    border: 0;
+    display: block;
+    margin: 10px auto;
+    font-size: large;
+    font-weight: bold;
+  }
+
+  .Update-button:hover {
+    background: #FF0000;
+  } 
+
+  .Update-form {
+    margin-bottom: 10px;
+    max-width: 250px;
+    padding: 5px;
+    font-size: large;
+  }
+
+  .EditItem-header {
+    margin-bottom: 5px;
+    padding: 5px;
+    font-size: large;
+    font-weight: lighter;
   }

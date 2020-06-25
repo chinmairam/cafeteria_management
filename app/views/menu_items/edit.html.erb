@@ -1,22 +1,31 @@
-<main class="SignUpPage">
-  <p class="SignUp-Login">
+<main class="EditPage">
+  <p class="EditPage-header">
     Edit Item
   </p>
-  <%= form_with url: menu_item_path, method: :patch, class: "SignUp-form" do |form| %>
+  <%= form_with url: menu_item_path, method: :patch, class: "Update-form" do |form| %>
+   <p class="EditItem-header">
+   Item Name :
+   </p>
     <%= form.text_field :name,
                         placeholder: "Item Name",
                         value: @menu_item.name,
                         autofocus: "autofocus" %>
     <br>
+    <p class="EditItem-header">
+    Price :
+    </p>
     <%= form.number_field :price,
                           placeholder: "Price",
                           value: @menu_item.price,
                           class: "edit-item-price" %>
     <br>
+    <p class="EditItem-header">
+    Description :
+    </p>
     <%= form.text_field :description,
                         value: @menu_item.description,
                         placeholder: "Description" %>
     <br>
-    <%= form.submit "Update", class: "SignUp-button" %>
+    <%= form.submit "Update", class: "Update-button" %>
   <% end %>
 </main>
