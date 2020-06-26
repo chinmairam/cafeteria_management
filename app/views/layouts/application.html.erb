@@ -7,7 +7,7 @@
     <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
     <%= javascript_pack_tag "application", 'data-turbolinks-track': "reload" %>
     <script>
-    function show_box(val) {
+    function display_form(val) {
       var element = document.getElementById("new_menu_name");
       if (val == "Add a Menu")
          { element.style.display = "inline"; }
@@ -21,14 +21,16 @@
     <nav class="navbar">
     <div class="navbar-logo">
       <h2 class="navbarHeader">
-      <%= image_tag "chef.png" %>WELCOME TO PK-PLAZA </h2>
+       <%= image_tag "chef.png" %>
+       WELCOME TO PK-PLAZA 
+       </h2>
       <%= image_tag "image.png" %>
     </div>
     <div class="Buttons-container">
         <div class="navbar-indexbutton">
             <h3><%= image_tag "nav-buttons.png" %> <% if @current_user %> <%= @current_user.name %>
                                                   <% else %>
-                                                    Online
+                                                    User
                                                   <% end %>
             </h3>
         </div>
@@ -51,7 +53,7 @@
           <% if @current_user.is_owner? %>
             <li class="navbarButton">
               <%= image_tag "List.png" %>
-              <%= link_to "All Orders", all_orders_path %>
+              <%= link_to "Full Orders", all_orders_path %>
             </li>
             <li class="navbarButton">
                 <%= image_tag "price.png" %>
@@ -77,7 +79,7 @@
           <% else %>
             <li class="navbarButton">
               <%= image_tag "Login.png" %>
-              <%= link_to "Sign In", new_session_path %>
+              <%= link_to "Log In", new_session_path %>
             </li>
             <li class="navbarButton">
               <%= image_tag "signup.png" %>

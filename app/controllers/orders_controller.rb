@@ -26,7 +26,7 @@ class OrdersController < ApplicationController
       order.address = params[:address]
       order.ordered_at = DateTime.now
       if order.save
-        flash[:notice] = "Order received! Soon your order will be delivered"
+        flash[:notice] = "Order accepted.Soon your order will be delivered"
         redirect_to orders_path
       else
         flash[:error] = order.errors.full_messages
@@ -50,7 +50,7 @@ class OrdersController < ApplicationController
     order.delivered_at = Time.now + 19800
     order.date = Date.today
     order.save!
-    flash[:notice] = "#{order.id} is marked as delivered!"
+    flash[:notice] = "#{order.id} is delivered!"
     redirect_to "/pending_orders"
   end
 

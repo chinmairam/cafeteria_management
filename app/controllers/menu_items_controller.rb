@@ -11,7 +11,7 @@ class MenuItemsController < ApplicationController
       menu.save
       menu_item = MenuItem.new(name: params[:name].capitalize, description: params[:description].capitalize, menu_id: menu.id, price: params[:price])
       if menu.save && menu_item.save
-        flash[:notice] = "Item added successfully!"
+        flash[:notice] = "Item added"
       else
         flash[:error] = menu_item.errors.full_messages + menu.errors.full_messages
       end
@@ -44,7 +44,7 @@ class MenuItemsController < ApplicationController
     menu_item.description = params[:description].capitalize
     menu_item.price = params[:price]
     if menu_item.save
-      flash[:notice] = "Item updated successfully!"
+      flash[:notice] = "Item Updated successfully!"
       redirect_to menus_path
     else
       flash[:error] = menu_item.errors.full_messages.join(", ")

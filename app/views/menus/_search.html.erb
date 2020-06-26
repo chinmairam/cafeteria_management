@@ -2,24 +2,24 @@
    <% if @current_user.is_owner? %>
      <div class="AddItem" id="Add-Item-form">
       <p class="Add-heading">
-        Add Items
+        Place Items
       </p>
        <%= form_with(model: @menu, url: menu_items_url, method: "post", local: true) do |form| %>
          <div class="costum-select">
-           <select name="id" onchange=show_box(this.value)>
-            <option value="" disabled selected style="color:#7e808c">Select a Menu</option>
+           <select name="id" onchange=display_form(this.value)>
+            <option value="">Select Menu</option>
              <% @menus.each do |menu| %>
                <option class="Dropdown-content" value=<%= menu.id %>> <%= menu.name %> </option>
              <% end %>
-             <option value="Add a Menu"> Add a Menu </option>
+             <option value="Add a Menu"> Add Menu </option>
            </select>
          </div>
-         <%= form.text_field :name, placeholder: "Item name" %>
-         <%= form.number_field :price, placeholder: "Item price" %>
-         <%= form.text_field :description, placeholder: "Description of item" %>
-         <%= form.text_field :new_menu_name, placeholder: "Menu name" %>
+         <%= form.text_field :new_menu_name, placeholder: "Menu Name" %>
+         <%= form.text_field :name, placeholder: "Item Name" %>
+         <%= form.number_field :price, placeholder: "Item Price" %>
+         <%= form.text_field :description, placeholder: "Item Description" %>
          <p class="ItemAdd-Button">
-          <%= form.submit value = "Add" %>
+          <%= form.submit value = "Add", data: { "disable-with": "Adding" } %>
          </p>
        <% end %>
      </div>

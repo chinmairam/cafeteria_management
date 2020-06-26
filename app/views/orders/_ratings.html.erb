@@ -1,8 +1,8 @@
 <p class="Rating">
   <% if mark_as_delivered %>
-    <%= link_to "Mark as Delivered", order_path(order.id), method: "patch" %>
+    <%= link_to "Deliver Order", order_path(order.id), method: "patch" %>
   <% elsif order.delivered_at.nil? %>
-    Order is under process
+    Rate after order confirmation
   <% else %>
     <% if order.ratings == 0 && order.user == @current_user %>
       <% 5.times do |img| %>

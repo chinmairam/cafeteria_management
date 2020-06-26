@@ -14,7 +14,7 @@ class OrderItemsController < ApplicationController
                                    menu_item_id: menu_item.id,
                                    menu_item_name: menu_item.name,
                                    menu_item_price: menu_item.price)
-    flash[:notice] = "#{order_item.menu_item_name} is placed into cart!"
+    flash[:notice] = "#{order_item.menu_item_name} is placed into cart"
     if params[:cart]
       redirect_to cart_path
     else
@@ -25,7 +25,7 @@ class OrderItemsController < ApplicationController
   def destroy
     order_item_id = params[:id]
     order_item = OrderItem.find(order_item_id).destroy
-    flash[:alert] = "#{order_item.menu_item_name} is removed from cart!"
+    flash[:alert] = "#{order_item.menu_item_name} removed from cart"
     if params[:cart]
       redirect_to cart_path
     else

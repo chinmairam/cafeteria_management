@@ -25,7 +25,7 @@
         <% end %>
       </div>
 
-      <span class="Orderone-Status"
+      <span class="Order-Status"
             <% if order.delivered_at %>
               style="color:blue;font-weight:bold"
             <% elsif order.ordered_at %>
@@ -40,24 +40,24 @@
       </span>
       
       <div class="Order-section">
-        <p class="Order-sub">Ratings</p>
+        <p class="Order-sub">Rating</p>
         <div class="Order-ratings">
           <%= render partial: "ratings", locals: { order: order, mark_as_delivered: mark_as_delivered } %>
         </div>
       </div>
 
       <section class="Order-section" id="Order-details">
-          <div class="Order-sub"> Billing</div>
+          <div class="Order-sub"> Orders</div>
          <div class="Order-calculation" >
            <% order.all_menu_item_names.uniq.each do |menu_item| %>
-                <%= menu_item %> x <%= order.all_menu_item_names.count(menu_item).to_s %> =
-                Rs. <%= order.order_items.get_menu_item_price(menu_item) * order.all_menu_item_names.count(menu_item) %>
+                <%= menu_item %> x <%= order.all_menu_item_names.count(menu_item).to_s %>=
+                Rs.<%= order.order_items.get_menu_item_price(menu_item) * order.all_menu_item_names.count(menu_item) %>
            <% end %>
          </div>
       </section>
 
       <div class="Order-section">
-        <p class="Order-sub">Order Price</p>
+        <p class="Order-sub">Price</p>
         <div class="Order-price">Rs.<%= order.total_price %></div>
       </div>
 

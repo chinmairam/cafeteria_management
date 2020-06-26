@@ -1,5 +1,5 @@
   .Orders {
-    max-width: 95%;
+    max-width: 100%;
     margin: 5px auto;
   }
 
@@ -30,7 +30,7 @@
     font-family: sans-serif;
   }
 
-  .Orderone-Status {
+  .Order-Status {
     margin-left: auto;
     padding: 5px;
     font-family: sans-serif;
@@ -91,7 +91,7 @@
       border: 2px solid darkred;
     }
     100% {
-      border: 1px solid grey;
+      border: 1px dotted gray;
     }
   }
 
@@ -182,6 +182,7 @@
   .Invoice-subheading {
     font-size: 30px;
     margin-bottom: 5px;
+    color: #E15D44;
   }
 
   .Detail {
@@ -224,6 +225,7 @@
 
   .Invoice-Header {
     margin-top: 10px;
+    color: #BC243C;
   }
 
   .Invoice-Title {

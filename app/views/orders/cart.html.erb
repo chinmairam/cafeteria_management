@@ -2,7 +2,7 @@
   <h3 class="Cart-Heading">Cart</h3>
   <% if @order %>
     <% if @order.order_items.empty? %>
-      <h2 class="empty-cart">Your cart is empty</h2>
+      <h2 class="empty-cart">Cart is empty</h2>
     <% else %>
       <div class="Cart-item-price">
         <ul>
@@ -38,11 +38,11 @@
           <div>
            <%= text_area_tag "address", nil, rows: 5, cols: 30, class: "Cart-Address" %>
           </div>
-          <%= form.submit "Place", class: "cart-checkout" %>
+          <%= form.submit "Order", data: { "disable-with": "Ordering" }, class: "cart-checkout" %>
         <% end %>
       </div>
     <% end %>
   <% else %>
-    <h2 class="empty-cart">Your Cart is empty</h2>
+    <h2 class="empty-cart">Cart is empty</h2>
   <% end %>
 </div>

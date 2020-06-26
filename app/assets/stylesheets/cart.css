@@ -29,6 +29,7 @@
   max-width: 100px;
   margin-bottom: 35px;
   margin: 0 auto;
+  color: #DD4132;
 }
 
 .Cart-item {
@@ -72,6 +73,10 @@
   padding: 8px;
 }
 
+.cart-checkout:hover {
+  background: #BC243C;
+}
+
 .empty-cart { 
   text-align: center;
   margin: 8px;
@@ -86,13 +91,16 @@
 
 .Cart-Address {
   border: 2px solid black;
-  margin-left: 250px;
+  margin-left: 25px;
+  margin-bottom: 10px;
   font-size: 25px;
   padding: 15px;
 }
+
 .Address-Header {
-  margin-top: 100px;
-  margin-left: 250px;
+  margin-top: 50px;
+  margin-left: 25px;
+  color: #F96714;
 }
 
 .CartItem-quantity {

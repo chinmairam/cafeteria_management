@@ -17,7 +17,7 @@
   .Cafeteria-Menu {
     width: 25%;
     margin: 5px;
-    border-right: 2px dotted rgba(197, 194, 194, 0.966);
+    border-right: 2px dotted gray;
     margin-left: 400px;
     margin-top: 50px;
   }
